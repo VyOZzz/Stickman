@@ -4,6 +4,14 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private float speed = 5f;
+    private PlayerCtrl _playerCtrl;
+
+    private void Reset()
+    {
+        LoadCtrl(out _playerCtrl);
+    }
+
+    private void LoadCtrl(out PlayerCtrl playerCtrl) => playerCtrl =  FindObjectOfType<PlayerCtrl>();
     private void Awake()
     {
         rb = GetComponentInParent<Rigidbody2D>();

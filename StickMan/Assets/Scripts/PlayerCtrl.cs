@@ -1,22 +1,25 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class PlayerCtrl : MonoBehaviour
 {
-    private PlayerMovement _playerMovement;
+    [FormerlySerializedAs("_playerMovement")] [SerializeField]private PlayerMovement playerMovement;
+    [FormerlySerializedAs("_groundChecker")] [SerializeField]private GroundChecker groundChecker;
+    [FormerlySerializedAs("_playerJump")] [SerializeField]private PlayerJump playerJump;
 
-    private PlayerJump _playerJump;
-    // Start is called before the first frame update
-    void Start()
-    {
-        _playerJump =  GetComponent<PlayerJump>();
-        _playerMovement = GetComponent<PlayerMovement>();
-    }
+    public PlayerMovement PlayerMovement() => playerMovement;
+    public PlayerJump PlayerJump() => playerJump;
+    public GroundChecker GroundChecker() => groundChecker;
 
-    // Update is called once per frame
-    void Update()
+    private void Reset()
     {
-        
+        playerJump = FindObjectOfType<PlayerJump>();
+        playerMovement = FindObjectOfType<PlayerMovement>();
+        groundChecker = FindObjectOfType<GroundChecker>();
     }
+    
+   
 }
