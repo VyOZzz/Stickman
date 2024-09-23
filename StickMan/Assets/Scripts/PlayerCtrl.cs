@@ -10,9 +10,9 @@ public class PlayerCtrl : MonoBehaviour
     [FormerlySerializedAs("_groundChecker")] [SerializeField]private GroundChecker groundChecker;
     [FormerlySerializedAs("_playerJump")] [SerializeField]private PlayerJump playerJump;
 
-    public PlayerMovement PlayerMovement() => playerMovement;
-    public PlayerJump PlayerJump() => playerJump;
-    public GroundChecker GroundChecker() => groundChecker;
+    public PlayerMovement PlayerMovement => playerMovement;
+    public PlayerJump PlayerJump => playerJump;
+    public GroundChecker GroundChecker => groundChecker;
 
     private void Reset()
     {

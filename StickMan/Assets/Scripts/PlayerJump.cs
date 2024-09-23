@@ -2,16 +2,18 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class PlayerJump : MonoBehaviour
 {
-    private PlayerCtrl _playerCtrl;
+    [SerializeField] private PlayerCtrl playerCtrl;
     [SerializeField] private float jumpForce = 20f;
     [SerializeField] private Rigidbody2D rb;
     
+    // sử dụng reset để khi bị quên k gắn 1 componet nào đó thì chỉ việc reset lại là dc.
     private void Reset()
     {
-        LoadCtrl(out _playerCtrl);
+        LoadCtrl(out playerCtrl);
     }
 
     private void LoadCtrl(out PlayerCtrl playerCtrl) => playerCtrl =  FindObjectOfType<PlayerCtrl>();
@@ -21,17 +23,18 @@ public class PlayerJump : MonoBehaviour
         rb = GetComponentInParent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
+        // nếu player ở mặt đất thì mới jump được
+        
+        // nhận input từ người chơi
+        if (Input.GetKeyDown(KeyCode.Space) && playerCtrl.GroundChecker.IsGrounded)
             JumpHandle();
-        }
     }
 
     void JumpHandle()
     {
+        // nhảy
         rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
     }
 }
