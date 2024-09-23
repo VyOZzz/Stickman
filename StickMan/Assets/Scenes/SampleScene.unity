@@ -12622,7 +12622,7 @@ GameObject:
   - component: {fileID: 319640216}
   - component: {fileID: 319640215}
   m_Layer: 0
-  m_Name: 2224_dark
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13084,7 +13084,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3006640305968491735, guid: ed94169d5109a42049b41da14474d2e3, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
