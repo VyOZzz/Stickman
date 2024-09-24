@@ -9,24 +9,24 @@ public class PlayerCtrl : MonoBehaviour
     [SerializeField]private PlayerMovement playerMovement;
     [SerializeField]private GroundChecker groundChecker;
     [SerializeField]private PlayerJump playerJump;
-    [FormerlySerializedAs("playerPunch")] [SerializeField] private Punch punch;
+    [SerializeField] private SwordAttack swordAttack;
     public PlayerMovement PlayerMovement => playerMovement;
     public PlayerJump PlayerJump => playerJump;
     public GroundChecker GroundChecker => groundChecker;
-    public Punch Punch => punch;
+    public SwordAttack SwordAttack => swordAttack;
     private void Reset()
     {
-        playerJump = FindObjectOfType<PlayerJump>();
+        swordAttack = FindObjectOfType<SwordAttack>();
         playerMovement = FindObjectOfType<PlayerMovement>();
         groundChecker = FindObjectOfType<GroundChecker>();
-        punch = FindObjectOfType<Punch>();
+        playerJump = FindObjectOfType<PlayerJump>();
     }
 
     private void Update()
     {
         if(Input.GetMouseButtonDown(0))
         {
-            punch.Attack();
+            swordAttack.Attack();
         }
     }
 }

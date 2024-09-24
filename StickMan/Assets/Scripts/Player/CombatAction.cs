@@ -5,7 +5,7 @@ using UnityEngine;
 
 public abstract class CombatAction : MonoBehaviour
 {
-   protected int damage;
+   protected int damage = 10;
    protected float cooldownTime;
    protected bool canAttack = true;
    // sử dụng IEnumerator để cooldown

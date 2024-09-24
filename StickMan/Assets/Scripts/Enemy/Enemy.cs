@@ -1,37 +1,33 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class Enemy : MonoBehaviour
 {
-    protected float speed;
-    protected int damage;
-    protected bool canAttack;
-    protected float CooldownTime;
-    [SerializeField]protected DamageHandle damageHandle;
+    protected int HP;
+    protected int speed;
 
-    private void Awake()  // Đổi từ Start sang Awake
+    public void SetHP(int hp) // Phương thức để thiết lập HP
     {
-        damageHandle = GetComponentInChildren<DamageHandle>();
+        HP = hp;
     }
-    protected IEnumerator AttackCooldown()
+
+    public void TakeDamage(int damage)
     {
-        canAttack = false;
-        yield return new WaitForSeconds(CooldownTime);
-        canAttack = true;
+        HP -= damage;
+        Debug.Log(HP);
+        if (HP <= 0)
+        {
+            Die(); // Gọi phương thức để xử lý khi chết
+        }
     }
+
+    protected virtual void Die()
+    {
+        // Logic cho cái chết, như hủy đối tượng hoặc phát hoạt ảnh
+        Destroy(gameObject);
+    }
+
     public abstract void Move();
     public abstract void Attack();
-    public abstract void ReceivedDamage();
-    public  void  SetDamage(int newDamage)
-    {
-        damage = newDamage;
-    }
-
-    public void SetSpeed(float newSpeed)
-    {
-        speed = newSpeed;
-    }
-    
 }

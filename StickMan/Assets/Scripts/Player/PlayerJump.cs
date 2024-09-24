@@ -26,12 +26,13 @@ public class PlayerJump : MonoBehaviour
     void Update()
     {
         // nếu player ở mặt đất thì mới jump được
-        
         // nhận input từ người chơi
         if (Input.GetKeyDown(KeyCode.Space) && playerCtrl.GroundChecker.IsGrounded)
+        {
             JumpHandle();
+            Debug.Log("jump");
+        }
     }
-
     void JumpHandle()
     {
         // nhảy

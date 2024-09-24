@@ -36,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
         
         WalkState();
         // set animation walk
-        _animator.SetBool("isWalk", isWalk);
+        _animator.SetBool(AnimationStrings.iswalk, isWalk);
         FlipDirection();
         // di chuyển
         rb.velocity = new Vector2(_horInput * speed , rb.velocity.y);
