@@ -9,7 +9,8 @@ public class PlayerJump : MonoBehaviour
     [SerializeField] private PlayerCtrl playerCtrl;
     [SerializeField] private float jumpForce = 20f;
     [SerializeField] private Rigidbody2D rb;
-    
+    private Animator _animator;
+
     // sử dụng reset để khi bị quên k gắn 1 componet nào đó thì chỉ việc reset lại là dc.
     private void Reset()
     {
@@ -21,8 +22,9 @@ public class PlayerJump : MonoBehaviour
     private void Awake()
     {
         rb = GetComponentInParent<Rigidbody2D>();
+        _animator = GetComponentInParent<Animator>();
+        Debug.Log(_animator != null ? "Animator found" : "Animator not found");
     }
-
     void Update()
     {
         // nếu player ở mặt đất thì mới jump được
@@ -30,12 +32,17 @@ public class PlayerJump : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && playerCtrl.GroundChecker.IsGrounded)
         {
             JumpHandle();
-            Debug.Log("jump");
         }
     }
     void JumpHandle()
     {
+        Debug.Log("jump");
+        //animation nhay
+        _animator.SetTrigger(AnimationStrings.jump);
         // nhảy
         rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+        
+        
+        
     }
 }

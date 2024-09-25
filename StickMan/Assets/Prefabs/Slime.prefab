@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 2917550191997492949}
   - component: {fileID: 5416627386889271104}
   - component: {fileID: 3265360436308788173}
-  - component: {fileID: 3692628874505010869}
-  m_Layer: 0
+  - component: {fileID: 1023163289243749330}
+  - component: {fileID: 4948733465593297485}
+  m_Layer: 8
   m_Name: Slime
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -171,7 +172,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &3692628874505010869
+--- !u!114 &1023163289243749330
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -180,6 +181,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 5030562595452724502}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a813c215eae7644e6b240b51f1bee253, type: 3}
+  m_Script: {fileID: 11500000, guid: ca4a938abf5ee4941a4a26b00b3d0086, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HP: 30
+  swordAttack: {fileID: 0}
+  detectionZone: {fileID: 0}
+--- !u!114 &4948733465593297485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5030562595452724502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 781f52b45a3a24058a4a2ea4421b8516, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 2
+  rb: {fileID: 0}
+  KBForce: 0
+  _animator: {fileID: 0}

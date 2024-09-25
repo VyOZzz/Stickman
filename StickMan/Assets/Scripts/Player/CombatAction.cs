@@ -8,6 +8,8 @@ public abstract class CombatAction : MonoBehaviour
    protected int damage = 10;
    protected float cooldownTime;
    protected bool canAttack = true;
+
+   protected bool isAttack;
    // sử dụng IEnumerator để cooldown
    protected IEnumerator AttackCooldown()
    {
@@ -22,4 +24,5 @@ public abstract class CombatAction : MonoBehaviour
    {
       damage = newDamane;
    }
+   
 }

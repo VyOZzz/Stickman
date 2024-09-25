@@ -9,20 +9,23 @@ public class GroundChecker : MonoBehaviour
     [SerializeField] private PlayerCtrl playerCtrl;
     [SerializeField] private bool isGround;
     [SerializeField] private LayerMask layerMask;
-    [SerializeField] private float maxDistance = 0.1f;
+    [SerializeField] private float maxDistance = 0.2f;
     private void Reset()
     {
         LoadCtrl(out playerCtrl);
     }
 
     private void LoadCtrl(out PlayerCtrl playerCtrl) => playerCtrl = FindObjectOfType<PlayerCtrl>();
+
     public bool IsGrounded
     {
         get => isGround;
-        set => isGround = value;
+        set
+        {
+            isGround = value;
+            playerCtrl.animator.SetBool(AnimationStrings.isGrounded, value);
+        }
     }
-
-
     private void Start()
     {
         layerMask = LayerMask.GetMask("Ground");

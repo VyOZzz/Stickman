@@ -10,33 +10,30 @@ public class PlayerMovement : MonoBehaviour
     private bool isFacingRight = true;
     private float _horInput;
     [SerializeField] private bool isWalk;
-    
+
+   
 // sử dụng reset để chỉ việc reset là sẽ tự gán lại các component
     private void Reset()
     {
         LoadCtrl(out _playerCtrl);
     }
-    
     private void LoadCtrl(out PlayerCtrl playerCtrl) => playerCtrl =  FindObjectOfType<PlayerCtrl>();
     private void Awake()
     {
         rb = GetComponentInParent<Rigidbody2D>();
         _animator = GetComponentInParent<Animator>();
     }
-    private void Update()
+    private void FixedUpdate()
     {
         WalkHandle();
-        
     }
-
     private void WalkHandle()
     {
         // nhận input từ người chơi với các phím như AD hay mũi tên
         _horInput = Input.GetAxis("Horizontal");
-        
         WalkState();
         // set animation walk
-        _animator.SetBool(AnimationStrings.iswalk, isWalk);
+        _animator.SetBool(AnimationStrings.walkAnim, isWalk);
         FlipDirection();
         // di chuyển
         rb.velocity = new Vector2(_horInput * speed , rb.velocity.y);
@@ -61,7 +58,6 @@ public class PlayerMovement : MonoBehaviour
             }
         }
     }
-
     private void WalkState()
     {
         if (Mathf.Abs(_horInput) > 0)
@@ -73,5 +69,4 @@ public class PlayerMovement : MonoBehaviour
             isWalk = false;
         }
     }
-    
 }
