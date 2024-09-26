@@ -8,11 +8,13 @@ public class MeleeEnemy : Enemy
 {
     [SerializeField] private SwordAttack swordAttack;
     [SerializeField] private DetectionZone detectionZone;
+    [SerializeField] private LevelManager levelManager;
     private void Awake()
     {
         detectionZone = GetComponentInChildren<DetectionZone>();
         swordAttack = GetComponentInChildren<SwordAttack>();
         swordAttack.isEnemy = true;
+        levelManager = FindObjectOfType<LevelManager>();
     }
     private void Update()
     {

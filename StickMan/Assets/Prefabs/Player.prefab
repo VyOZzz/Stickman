@@ -44,8 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83e24ec3bfba54ba4b466be1a299af09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 3302674664683183204}
-  speed: 10.07
+  rb: {fileID: 0}
+  speed: 5
+  _playerCtrl: {fileID: 7817412262396208732}
   isWalk: 0
 --- !u!1 &3773331185750200552
 GameObject:
@@ -244,10 +245,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18aafa3137392477c8009510d6c71fd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  KBForce: 5
+  KBForce: 6.58
   _damage: 20
   detectionZone: {fileID: 0}
   isEnemy: 0
+  isAttack: 0
+  newCooldownTime: 0.5
+  canMove: 1
 --- !u!1 &6349587264854982418
 GameObject:
   m_ObjectHideFlags: 0
@@ -292,7 +296,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9db02fa50e3b44589b5d729d921bcd64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 100
+  playerCtrl: {fileID: 7817412262396208732}
+  HP: 50
 --- !u!1 &7505697365286844236
 GameObject:
   m_ObjectHideFlags: 0

@@ -31,7 +31,8 @@ public class PlayerJump : MonoBehaviour
         // nhận input từ người chơi
         if (Input.GetKeyDown(KeyCode.Space) && playerCtrl.GroundChecker.IsGrounded)
         {
-            JumpHandle();
+            if(playerCtrl.SwordAttack.CanMove)
+                JumpHandle();
         }
     }
     void JumpHandle()

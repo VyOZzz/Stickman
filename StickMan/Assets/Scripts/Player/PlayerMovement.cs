@@ -5,12 +5,11 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private float speed = 5f;
-    private PlayerCtrl _playerCtrl;
+    [SerializeField] private PlayerCtrl _playerCtrl;
     private Animator _animator;
     private bool isFacingRight = true;
     private float _horInput;
     [SerializeField] private bool isWalk;
-
    
 // sử dụng reset để chỉ việc reset là sẽ tự gán lại các component
     private void Reset()
@@ -25,7 +24,8 @@ public class PlayerMovement : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        WalkHandle();
+        if(_playerCtrl.SwordAttack.CanMove)
+            WalkHandle();
     }
     private void WalkHandle()
     {

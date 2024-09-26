@@ -4,28 +4,19 @@ using UnityEngine;
 
 public class HealthControl : MonoBehaviour
 {
+    [SerializeField] private PlayerCtrl playerCtrl;
     [SerializeField] private int HP = 100;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (HP <= 0) Die();
-    }
 
     public void TakeDamage(int damage)
     {
         Debug.Log(HP);
         HP -= damage;
+        if (HP <= 0)
+            Die();
     }
 
     private void Die()
     {
-        Destroy(gameObject);
+        Destroy(playerCtrl.gameObject);
     }
 }

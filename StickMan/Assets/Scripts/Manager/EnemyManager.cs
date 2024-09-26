@@ -1,25 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyManager : MonoBehaviour
 {
-    [SerializeField] private GameObject slimePrefab;
+    [SerializeField] private List<GameObject> enemies;
     [SerializeField] private GameObject skeletonPrefab;
-    
-    public void SpawnSlime(Vector3 position)
+    [SerializeField] private GameObject mushroom;
+    void SpawnEnemies()
     {
-        Instantiate(slimePrefab, position, Quaternion.identity);
-        
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        if (currentSceneIndex == 1)
+        {
+            SpawnEnemy(mushroom, 5);
+        }else if (currentSceneIndex == 2)
+        {
+            SpawnEnemy(mushroom, 5);
+            SpawnEnemy(skeletonPrefab, 5);
+        }
     }
-    public void SpawnSkeleton(Vector3 position)
+
+    void SpawnEnemy(GameObject prefab, int count)
     {
-        Instantiate(skeletonPrefab, position, Quaternion.identity);
-        
-    }
-    void Start()
-    {
-        //SpawnSlime(new Vector2(0, 0));       // Spawn Slime ở vị trí 0,0
-        SpawnSkeleton(new Vector2(-5, 0));    // Spawn Skeleton ở vị trí (5,0)
+        for (int i = 0; i < count; i++)
+        {
+            Vector2 spawnPos = new Vector3(Random.Range(-40,40), 0);
+            Instantiate(prefab, spawnPos, Quaternion.identity);
+        }
     }
 }
