@@ -29,8 +29,8 @@ public class EnemyMovement : MonoBehaviour
     }
     void MoveToPlayer()
     {
-        if (AnimationStrings.walkAnim != null) 
-            _animator.SetBool(AnimationStrings.walkAnim, true); 
+        if (AnimationStrings.isWalk != null) 
+            _animator.SetBool(AnimationStrings.isWalk, true); 
         Vector2 newPos = new Vector2(player.transform.position.x, transform.position.y); 
         transform.position =  Vector2.Lerp(transform.position, newPos, moveSpeed * Time.deltaTime);
     }

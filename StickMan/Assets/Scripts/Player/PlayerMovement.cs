@@ -1,16 +1,21 @@
+using System;
 using UnityEngine;
 using UnityEngine.Rendering.VirtualTexturing;
+using UnityEngine.Serialization;
 
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D rb;
-    [SerializeField] private float speed = 5f;
+    [SerializeField] private float currentSpeed = 5f;
+    [SerializeField] private float walkSpeed = 5f;
+    [SerializeField] private float runSpeed = 10f;
     [SerializeField] private PlayerCtrl _playerCtrl;
     private Animator _animator;
     private bool isFacingRight = true;
     private float _horInput;
     [SerializeField] private bool isWalk;
-   
+
+    [SerializeField] private bool isRun;
 // sử dụng reset để chỉ việc reset là sẽ tự gán lại các component
     private void Reset()
     {
@@ -24,19 +29,30 @@ public class PlayerMovement : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if(_playerCtrl.SwordAttack.CanMove)
+        if(_playerCtrl.PlayerSwordAttack.CanMove)
+        {
+            if (Input.GetKey(KeyCode.LeftShift) && _playerCtrl.GroundChecker.IsGrounded)
+            {
+                isRun = true;
+            }
+            else
+            {
+                isRun = false;
+            }
             WalkHandle();
+        }
+        AnimationMovementHandle();
     }
     private void WalkHandle()
     {
+        currentSpeed = isRun ? runSpeed : walkSpeed;
         // nhận input từ người chơi với các phím như AD hay mũi tên
         _horInput = Input.GetAxis("Horizontal");
         WalkState();
         // set animation walk
-        _animator.SetBool(AnimationStrings.walkAnim, isWalk);
         FlipDirection();
         // di chuyển
-        rb.velocity = new Vector2(_horInput * speed , rb.velocity.y);
+        rb.velocity = new Vector2(_horInput * currentSpeed , rb.velocity.y);
     }
     private void FlipDirection()
     {
@@ -69,4 +85,28 @@ public class PlayerMovement : MonoBehaviour
             isWalk = false;
         }
     }
+
+    private void AnimationMovementHandle()
+    {
+        currentSpeed = Mathf.Abs(rb.velocity.x);
+        if (currentSpeed <= 0)
+        {
+            _animator.SetBool(AnimationStrings.isWalk, false);
+            _animator.SetBool(AnimationStrings.isIdle, true);
+            _animator.SetBool(AnimationStrings.isRun, false);
+        }else if (currentSpeed > 0 && currentSpeed <= walkSpeed)
+        {
+            _animator.SetBool(AnimationStrings.isIdle, false);
+            _animator.SetBool(AnimationStrings.isWalk, true);
+            _animator.SetBool(AnimationStrings.isRun, false);
+        }
+        else if (currentSpeed > walkSpeed)
+        {
+            _animator.SetBool(AnimationStrings.isIdle, false);
+            _animator.SetBool(AnimationStrings.isWalk, false);
+            _animator.SetBool(AnimationStrings.isRun, true);
+        }
+    }
+   
+    
 }

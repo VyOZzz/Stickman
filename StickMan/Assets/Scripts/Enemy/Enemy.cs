@@ -2,13 +2,16 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public  class Enemy : MonoBehaviour
 {
     public int HP;
-    
+    private Heathbar heathBar;
     private void Start()
     {
+        heathBar = GetComponentInChildren<Heathbar>();
+        heathBar.SetMaxHeath(HP);
     }
 
     public void SetHP(int hp) // Phương thức để thiết lập HP
@@ -19,6 +22,7 @@ public  class Enemy : MonoBehaviour
     public void TakeDamage(int damage)
     {
         HP -= damage;
+        heathBar.SetHeath(HP);
         if (HP <= 0)
         {
             Die(); // Gọi phương thức để xử lý khi chết

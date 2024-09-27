@@ -10,18 +10,18 @@ public class PlayerCtrl : MonoBehaviour
     [SerializeField]private PlayerMovement playerMovement;
     [SerializeField]private GroundChecker groundChecker;
     [SerializeField]private PlayerJump playerJump;
-    [SerializeField] private SwordAttack swordAttack;
+    [FormerlySerializedAs("swordAttack")] [SerializeField] private PlayerSwordAttack playerSwordAttack;
     [FormerlySerializedAs("_animator")] public Animator animator;
     [SerializeField] private HealthControl healthControl;
     public PlayerMovement PlayerMovement => playerMovement;
     public PlayerJump PlayerJump => playerJump;
     public GroundChecker GroundChecker => groundChecker;
-    public SwordAttack SwordAttack => swordAttack;
+    public PlayerSwordAttack PlayerSwordAttack => playerSwordAttack;
     public HealthControl HealthControl => healthControl;
     
     private void Reset()
     {
-        swordAttack = FindObjectOfType<SwordAttack>();
+        playerSwordAttack = FindObjectOfType<PlayerSwordAttack>();
         playerMovement = FindObjectOfType<PlayerMovement>();
         groundChecker = FindObjectOfType<GroundChecker>();
         playerJump = FindObjectOfType<PlayerJump>();
@@ -37,7 +37,7 @@ public class PlayerCtrl : MonoBehaviour
     {
         if(Input.GetMouseButtonDown(0))
         {
-            swordAttack.Attack();
+            playerSwordAttack.Attack();
         }
     }
 

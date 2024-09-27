@@ -16,7 +16,7 @@ public class EnemyManager : MonoBehaviour
         {
             SpawnEnemy(mushroom, 5);
             countEnemy = 5;
-
+        
         }else if (currentSceneIndex == 2)
         {
             SpawnEnemy(mushroom, 5);

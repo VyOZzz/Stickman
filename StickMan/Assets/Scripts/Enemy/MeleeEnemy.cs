@@ -4,25 +4,24 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class MeleeEnemy : Enemy
 {
-    [SerializeField] private SwordAttack swordAttack;
+    [SerializeField] private EnemySwordAttack enemySwordAttack;
     [SerializeField] private DetectionZone detectionZone;
     [SerializeField] private LevelManager levelManager;
     private void Awake()
     {
         detectionZone = GetComponentInChildren<DetectionZone>();
-        swordAttack = GetComponentInChildren<SwordAttack>();
-        swordAttack.isEnemy = true;
+        enemySwordAttack = GetComponentInChildren<EnemySwordAttack>();
         levelManager = FindObjectOfType<LevelManager>();
     }
     private void Update()
     {
         if (detectionZone.HasTarget)
         {
-            swordAttack.Attack();
-            
+            enemySwordAttack.Attack();            
         }
     }
     // ghi đè hàm Die nếu cần
