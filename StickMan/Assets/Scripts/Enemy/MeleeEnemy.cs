@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class MeleeEnemy : Enemy
@@ -28,6 +29,7 @@ public class MeleeEnemy : Enemy
     protected override void Die()
     {
         base.Die();
+        levelManager.EnemyDefeated();
         Debug.Log("MeleeEnemy died in a special way!");
     }
     
