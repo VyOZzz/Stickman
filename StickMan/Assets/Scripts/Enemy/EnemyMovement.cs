@@ -12,16 +12,18 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private float KBForce;
     [SerializeField] private Animator _animator;
+    [SerializeField] private EnemySwordAttack enemySwordAttack;
     private void Start()
     {
         player = GameObject.FindWithTag("Player").transform;
         rb = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
+        enemySwordAttack = GetComponentInChildren<EnemySwordAttack>();
     }
 
     void Update()
     {
-        if(player != null)
+        if(player != null && enemySwordAttack.CanMove )
         {
             MoveToPlayer();
             FlipDirection();

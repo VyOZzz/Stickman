@@ -8,6 +8,8 @@ public abstract class CombatAction : MonoBehaviour
    protected int damage = 10;
    protected float cooldownTime;
    protected bool canAttack = true;
+   protected bool canMove = true;
+
    // sử dụng IEnumerator để cooldown
    protected IEnumerator AttackCooldown()
    {
@@ -21,5 +23,17 @@ public abstract class CombatAction : MonoBehaviour
    public void SetDamage(int newDamane)
    {
       damage = newDamane;
+   }
+   protected IEnumerator ResetEnemyState(EnemySwordAttack thing)
+   {
+      yield return new WaitForSeconds(0.5f);
+      thing.CanAttack = true;
+      thing.CanMove = true;
+   }
+   protected IEnumerator ResetPlayerState(PlayerSwordAttack thing )
+   {
+      yield return new WaitForSeconds(0.5f);
+      thing.CanAttack = true;
+      thing.canMove = true;
    }
 }

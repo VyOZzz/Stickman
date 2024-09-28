@@ -29,7 +29,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if(_playerCtrl.PlayerSwordAttack.CanMove)
+        if(_playerCtrl.PlayerSwordAttack.CanMove == true)
         {
             if (Input.GetKey(KeyCode.LeftShift) && _playerCtrl.GroundChecker.IsGrounded)
             {
@@ -52,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
         // set animation walk
         FlipDirection();
         // di chuyển
-        rb.velocity = new Vector2(_horInput * currentSpeed , rb.velocity.y);
+        rb.linearVelocity = new Vector2(_horInput * currentSpeed , rb.linearVelocity.y);
     }
     private void FlipDirection()
     {
@@ -88,7 +88,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void AnimationMovementHandle()
     {
-        currentSpeed = Mathf.Abs(rb.velocity.x);
+        currentSpeed = Mathf.Abs(rb.linearVelocity.x);
         if (currentSpeed <= 0)
         {
             _animator.SetBool(AnimationStrings.isWalk, false);

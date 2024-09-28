@@ -13,4 +13,5 @@ public class AnimationStrings
     public static string isDeath = "isDeath";
     public static string isIdle = "isIdle";
     public static string isRun = "isRun";
+    public static string comboStep = "comboStep";
 }

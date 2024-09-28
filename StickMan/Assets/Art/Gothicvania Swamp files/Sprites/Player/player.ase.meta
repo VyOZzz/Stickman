@@ -105,6 +105,7 @@ ScriptedImporter:
     pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 0
@@ -126,6 +127,7 @@ ScriptedImporter:
     pivot: {x: 0.48387098, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 109
@@ -146,6 +148,7 @@ ScriptedImporter:
     pivot: {x: 0.48387098, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 159
@@ -166,6 +169,7 @@ ScriptedImporter:
     pivot: {x: 0.48387098, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 109
@@ -186,6 +190,7 @@ ScriptedImporter:
     pivot: {x: 0.48387098, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 109
@@ -206,6 +211,7 @@ ScriptedImporter:
     pivot: {x: 0.48387098, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 109
@@ -226,6 +232,7 @@ ScriptedImporter:
     pivot: {x: 0.48387098, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 109
@@ -246,6 +253,7 @@ ScriptedImporter:
     pivot: {x: 0.45454544, y: -0.2}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 159
@@ -266,6 +274,7 @@ ScriptedImporter:
     pivot: {x: 0.42222223, y: -0.022222223}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 56
@@ -286,6 +295,7 @@ ScriptedImporter:
     pivot: {x: 0.36363634, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 56
@@ -306,6 +316,7 @@ ScriptedImporter:
     pivot: {x: 0.30952382, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 109
@@ -326,6 +337,7 @@ ScriptedImporter:
     pivot: {x: 0.2820513, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 159
@@ -346,6 +358,7 @@ ScriptedImporter:
     pivot: {x: 0.34999996, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 56
@@ -366,6 +379,7 @@ ScriptedImporter:
     pivot: {x: 0.42857146, y: -0.09090909}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 56
@@ -386,6 +400,7 @@ ScriptedImporter:
     pivot: {x: 0.4883721, y: -0.2}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 159
@@ -406,6 +421,7 @@ ScriptedImporter:
     pivot: {x: 0.52272725, y: -0.022222223}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -426,6 +442,7 @@ ScriptedImporter:
     pivot: {x: 0.5555556, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 56
@@ -446,6 +463,7 @@ ScriptedImporter:
     pivot: {x: 0.52272725, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 56
@@ -466,6 +484,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -486,6 +505,7 @@ ScriptedImporter:
     pivot: {x: 0.46511626, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -506,6 +526,7 @@ ScriptedImporter:
     pivot: {x: 0.42857146, y: -0.09090909}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 109
@@ -526,6 +547,7 @@ ScriptedImporter:
     pivot: {x: 0.34883723, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -546,6 +568,7 @@ ScriptedImporter:
     pivot: {x: 0.36585367, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 56
@@ -566,6 +589,7 @@ ScriptedImporter:
     pivot: {x: 0.34883723, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -586,6 +610,7 @@ ScriptedImporter:
     pivot: {x: 0.34883723, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -606,6 +631,7 @@ ScriptedImporter:
     pivot: {x: 0.41666663, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 159
@@ -626,6 +652,7 @@ ScriptedImporter:
     pivot: {x: 0.41666663, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 159
@@ -646,6 +673,7 @@ ScriptedImporter:
     pivot: {x: 0.41666663, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 159
@@ -666,6 +694,7 @@ ScriptedImporter:
     pivot: {x: 0.4347826, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 159
@@ -686,6 +715,7 @@ ScriptedImporter:
     pivot: {x: 0.41666663, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 159
@@ -706,6 +736,7 @@ ScriptedImporter:
     pivot: {x: 0.4318182, y: -0.020408163}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -726,6 +757,7 @@ ScriptedImporter:
     pivot: {x: 0.42857146, y: -0.31578946}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 159
@@ -746,6 +778,7 @@ ScriptedImporter:
     pivot: {x: 0.46341464, y: -0.06521739}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 56
@@ -766,6 +799,7 @@ ScriptedImporter:
     pivot: {x: 0.46341464, y: -0.06521739}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 56
@@ -786,6 +820,7 @@ ScriptedImporter:
     pivot: {x: 0.5172414, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 109
@@ -806,6 +841,7 @@ ScriptedImporter:
     pivot: {x: 0.38636363, y: -0.060000002}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -826,6 +862,7 @@ ScriptedImporter:
     pivot: {x: 0.38636363, y: -0.060000002}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -850,7 +887,7 @@ ScriptedImporter:
     layerType: 0
     blendMode: 0
     cells:
-    - name: player_Frame_1
+    - name: Frame_1
       frameIndex: 1
       additiveSortOrder: 0
       cellRect:
@@ -859,7 +896,7 @@ ScriptedImporter:
         width: 31
         height: 46
       spriteId: 169f6fc611d3f4cf4a209a03f57823fc
-    - name: player_Frame_2
+    - name: Frame_2
       frameIndex: 2
       additiveSortOrder: 0
       cellRect:
@@ -868,7 +905,7 @@ ScriptedImporter:
         width: 31
         height: 47
       spriteId: 9412d096a5194425f98b27007f168b88
-    - name: player_Frame_3
+    - name: Frame_3
       frameIndex: 3
       additiveSortOrder: 0
       cellRect:
@@ -877,7 +914,7 @@ ScriptedImporter:
         width: 31
         height: 47
       spriteId: cc7b21684ae0349e9b72e2e55e85369b
-    - name: player_Frame_4
+    - name: Frame_4
       frameIndex: 4
       additiveSortOrder: 0
       cellRect:
@@ -886,7 +923,7 @@ ScriptedImporter:
         width: 31
         height: 47
       spriteId: f6b0a11ee5d534eb9a8c281748b02bbc
-    - name: player_Frame_5
+    - name: Frame_5
       frameIndex: 5
       additiveSortOrder: 0
       cellRect:
@@ -895,7 +932,7 @@ ScriptedImporter:
         width: 31
         height: 47
       spriteId: 313d5628c82fb419d9e49934257d4782
-    - name: player_Frame_6
+    - name: Frame_6
       frameIndex: 6
       additiveSortOrder: 0
       cellRect:
@@ -904,7 +941,7 @@ ScriptedImporter:
         width: 31
         height: 47
       spriteId: e616527dcc0924b9990c71a03a2cb42f
-    - name: player_Frame_7
+    - name: Frame_7
       frameIndex: 7
       additiveSortOrder: 0
       cellRect:
@@ -913,7 +950,7 @@ ScriptedImporter:
         width: 44
         height: 40
       spriteId: 3295643d7510b4c13a85f9d95c7546af
-    - name: player_Frame_8
+    - name: Frame_8
       frameIndex: 8
       additiveSortOrder: 0
       cellRect:
@@ -922,7 +959,7 @@ ScriptedImporter:
         width: 45
         height: 45
       spriteId: da598dd4b9704494db197bee8bd4ac46
-    - name: player_Frame_9
+    - name: Frame_9
       frameIndex: 9
       additiveSortOrder: 0
       cellRect:
@@ -931,7 +968,7 @@ ScriptedImporter:
         width: 44
         height: 44
       spriteId: a5d4915ac76814ad5a07936eb535ab7b
-    - name: player_Frame_10
+    - name: Frame_10
       frameIndex: 10
       additiveSortOrder: 0
       cellRect:
@@ -940,7 +977,7 @@ ScriptedImporter:
         width: 42
         height: 43
       spriteId: 07849f6e006f547b5b10e4840f832f5c
-    - name: player_Frame_11
+    - name: Frame_11
       frameIndex: 11
       additiveSortOrder: 0
       cellRect:
@@ -949,7 +986,7 @@ ScriptedImporter:
         width: 39
         height: 45
       spriteId: b1b7f113e8f2148fea36b88ecc3e3319
-    - name: player_Frame_12
+    - name: Frame_12
       frameIndex: 12
       additiveSortOrder: 0
       cellRect:
@@ -958,7 +995,7 @@ ScriptedImporter:
         width: 40
         height: 47
       spriteId: 30c6729b6cafc4976a9ee9dfaa90836e
-    - name: player_Frame_13
+    - name: Frame_13
       frameIndex: 13
       additiveSortOrder: 0
       cellRect:
@@ -967,7 +1004,7 @@ ScriptedImporter:
         width: 42
         height: 44
       spriteId: e34b5f67dd7cd4ae0b85347e2774e2de
-    - name: player_Frame_14
+    - name: Frame_14
       frameIndex: 14
       additiveSortOrder: 0
       cellRect:
@@ -976,7 +1013,7 @@ ScriptedImporter:
         width: 43
         height: 40
       spriteId: a65042e83092f427a8b60407e53bfbb6
-    - name: player_Frame_15
+    - name: Frame_15
       frameIndex: 15
       additiveSortOrder: 0
       cellRect:
@@ -985,7 +1022,7 @@ ScriptedImporter:
         width: 44
         height: 45
       spriteId: 1c7ce7f1ff4264ba5858e42aa1f51d78
-    - name: player_Frame_16
+    - name: Frame_16
       frameIndex: 16
       additiveSortOrder: 0
       cellRect:
@@ -994,7 +1031,7 @@ ScriptedImporter:
         width: 45
         height: 44
       spriteId: cefb58830781e41e5b99b4204590812d
-    - name: player_Frame_17
+    - name: Frame_17
       frameIndex: 17
       additiveSortOrder: 0
       cellRect:
@@ -1003,7 +1040,7 @@ ScriptedImporter:
         width: 44
         height: 43
       spriteId: 7d7d8003b8c134d8daa13ef4670b5a6f
-    - name: player_Frame_18
+    - name: Frame_18
       frameIndex: 18
       additiveSortOrder: 0
       cellRect:
@@ -1012,7 +1049,7 @@ ScriptedImporter:
         width: 44
         height: 45
       spriteId: 6374ca4a3697e4bf599e2f5931d56dc8
-    - name: player_Frame_19
+    - name: Frame_19
       frameIndex: 19
       additiveSortOrder: 0
       cellRect:
@@ -1021,7 +1058,7 @@ ScriptedImporter:
         width: 43
         height: 47
       spriteId: c91f6d144fb7f4440a4c1aa809dd60a2
-    - name: player_Frame_20
+    - name: Frame_20
       frameIndex: 20
       additiveSortOrder: 0
       cellRect:
@@ -1030,7 +1067,7 @@ ScriptedImporter:
         width: 42
         height: 44
       spriteId: 601e00005f48c4f32bda46cfd7bfbed4
-    - name: player_Frame_21
+    - name: Frame_21
       frameIndex: 21
       additiveSortOrder: 0
       cellRect:
@@ -1039,7 +1076,7 @@ ScriptedImporter:
         width: 43
         height: 47
       spriteId: 42a0b4d635f084213b9c8f16703bf241
-    - name: player_Frame_22
+    - name: Frame_22
       frameIndex: 22
       additiveSortOrder: 0
       cellRect:
@@ -1048,7 +1085,7 @@ ScriptedImporter:
         width: 41
         height: 47
       spriteId: 82b964ca51a074a6086275d03f2a58ba
-    - name: player_Frame_23
+    - name: Frame_23
       frameIndex: 23
       additiveSortOrder: 0
       cellRect:
@@ -1057,7 +1094,7 @@ ScriptedImporter:
         width: 43
         height: 47
       spriteId: 472a29224618d46848c0749b2fc47cf6
-    - name: player_Frame_24
+    - name: Frame_24
       frameIndex: 24
       additiveSortOrder: 0
       cellRect:
@@ -1066,7 +1103,7 @@ ScriptedImporter:
         width: 43
         height: 47
       spriteId: 72236149bbf3d4dd0933ac947497b666
-    - name: player_Frame_25
+    - name: Frame_25
       frameIndex: 25
       additiveSortOrder: 0
       cellRect:
@@ -1075,7 +1112,7 @@ ScriptedImporter:
         width: 48
         height: 37
       spriteId: 9b5dfcc16162b4553b44d463119ab50b
-    - name: player_Frame_26
+    - name: Frame_26
       frameIndex: 26
       additiveSortOrder: 0
       cellRect:
@@ -1084,7 +1121,7 @@ ScriptedImporter:
         width: 48
         height: 37
       spriteId: d376f6463422042c8957de5537174050
-    - name: player_Frame_27
+    - name: Frame_27
       frameIndex: 27
       additiveSortOrder: 0
       cellRect:
@@ -1093,7 +1130,7 @@ ScriptedImporter:
         width: 48
         height: 37
       spriteId: 4d046eb1383534ff3a73ee88590c6db4
-    - name: player_Frame_28
+    - name: Frame_28
       frameIndex: 28
       additiveSortOrder: 0
       cellRect:
@@ -1102,7 +1139,7 @@ ScriptedImporter:
         width: 46
         height: 37
       spriteId: 301c48e11a16548568980c054949c624
-    - name: player_Frame_29
+    - name: Frame_29
       frameIndex: 29
       additiveSortOrder: 0
       cellRect:
@@ -1111,7 +1148,7 @@ ScriptedImporter:
         width: 48
         height: 37
       spriteId: 0138873a0ed814c248eb072df63560f4
-    - name: player_Frame_30
+    - name: Frame_30
       frameIndex: 30
       additiveSortOrder: 0
       cellRect:
@@ -1120,7 +1157,7 @@ ScriptedImporter:
         width: 44
         height: 49
       spriteId: a834d6b3a482c41ccb5ab0ff6b99a8fd
-    - name: player_Frame_31
+    - name: Frame_31
       frameIndex: 31
       additiveSortOrder: 0
       cellRect:
@@ -1129,7 +1166,7 @@ ScriptedImporter:
         width: 42
         height: 38
       spriteId: 983367ded6c6548dc85a09caf8ccb596
-    - name: player_Frame_32
+    - name: Frame_32
       frameIndex: 32
       additiveSortOrder: 0
       cellRect:
@@ -1138,7 +1175,7 @@ ScriptedImporter:
         width: 41
         height: 46
       spriteId: c50f8c697afdd40c4a92e576d1c68e44
-    - name: player_Frame_33
+    - name: Frame_33
       frameIndex: 33
       additiveSortOrder: 0
       cellRect:
@@ -1147,7 +1184,7 @@ ScriptedImporter:
         width: 41
         height: 46
       spriteId: 31eb4edcacd29484a8bd223d7a32db73
-    - name: player_Frame_0
+    - name: Frame_0
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -1156,7 +1193,7 @@ ScriptedImporter:
         width: 29
         height: 48
       spriteId: 6c561499e415440a7be45f97dab070c8
-    - name: player_Frame_34
+    - name: Frame_34
       frameIndex: 34
       additiveSortOrder: 0
       cellRect:
@@ -1165,7 +1202,7 @@ ScriptedImporter:
         width: 44
         height: 50
       spriteId: afc149bfa9ea64942bc8a370c6bc5b35
-    - name: player_Frame_35
+    - name: Frame_35
       frameIndex: 35
       additiveSortOrder: 0
       cellRect:
