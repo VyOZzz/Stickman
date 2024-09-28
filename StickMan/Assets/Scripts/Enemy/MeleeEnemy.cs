@@ -10,12 +10,12 @@ public class MeleeEnemy : Enemy
 {
     [SerializeField] private EnemySwordAttack enemySwordAttack;
     [SerializeField] private DetectionZone detectionZone;
-    [SerializeField] private LevelManager levelManager;
+    [FormerlySerializedAs("levelManager")] [SerializeField] private GameManager gameManager;
     private void Awake()
     {
         detectionZone = GetComponentInChildren<DetectionZone>();
         enemySwordAttack = GetComponentInChildren<EnemySwordAttack>();
-        levelManager = FindObjectOfType<LevelManager>();
+        gameManager = FindObjectOfType<GameManager>();
     }
     private void Update()
     {
@@ -28,7 +28,7 @@ public class MeleeEnemy : Enemy
     protected override void Die()
     {
         base.Die();
-        levelManager.EnemyDefeated();
+        gameManager.EnemyDefeated();
         Debug.Log("MeleeEnemy died in a special way!");
     }
     

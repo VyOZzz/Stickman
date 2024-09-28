@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2642585207840433891}
   - component: {fileID: 5611626436869747813}
   m_Layer: 5
-  m_Name: Canvas (1)
+  m_Name: HeathUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

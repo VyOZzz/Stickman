@@ -3,13 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class HealthControl : MonoBehaviour
 {
     [SerializeField] private PlayerCtrl playerCtrl;
     [SerializeField] private int HP = 100;
     [SerializeField] private Heathbar heathBar;
-    [SerializeField] private LevelManager levelManager;
+    [FormerlySerializedAs("levelManager")] [SerializeField] private GameManager gameManager;
     [SerializeField] private Animator animator;
     public int GetHP
     {
@@ -41,6 +42,6 @@ public class HealthControl : MonoBehaviour
         animator.SetBool(AnimationStrings.isDeath, true);
         yield return new WaitForSeconds(1);
         Destroy(playerCtrl.gameObject);
-        levelManager.GameOver();
+        gameManager.GameOver();
     }
 }

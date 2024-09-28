@@ -4,15 +4,15 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class EnemySwordAttack : CombatAction
 {
     [SerializeField] private float KBForce = 5f;
-    [SerializeField]private new int _damage = 10;
-    private Animator animator;
+    [SerializeField]private new int damage = 10;
+    private Animator _animator;
     [SerializeField] private DetectionZone detectionZone;
     [SerializeField] private float newCooldownTime = 0.5f;
-    [SerializeField] private bool canMove = true;
     [SerializeField] private bool isAttacking = false; // Thêm biến để theo dõi trạng thái tấn công
 
     public bool CanMove
@@ -28,15 +28,15 @@ public class EnemySwordAttack : CombatAction
         get => canAttack;
         set => canAttack = value;
     }
-    void SetCooldownTime(float _newCooldownTime)
+    void SetCooldownTime(float newTimeToCooldown)
     {
-        cooldownTime = newCooldownTime;
+        base.cooldownTime = newTimeToCooldown;
     }
     void Start()
     {
-        SetDamage(_damage);
+        SetDamage(damage);
         SetCooldownTime(newCooldownTime);
-        animator = GetComponentInParent<Animator>();
+        _animator = GetComponentInParent<Animator>();
         detectionZone = GetComponentInChildren<DetectionZone>();
     }
     public override void Attack()
@@ -46,7 +46,7 @@ public class EnemySwordAttack : CombatAction
             CanMove = false;
             isAttacking = true; // theo dõi trạng thái tấn công
             // animation attack
-            animator.SetTrigger(AnimationStrings.attackTrigger);
+            _animator.SetTrigger(AnimationStrings.attackTrigger);
             //cooldown
             StartCoroutine(AttackCooldown());
         }
@@ -66,7 +66,7 @@ public class EnemySwordAttack : CombatAction
         if (player != null)
         {
             Debug.Log("HIT");
-            player.HealthControl.TakeDamage(_damage);
+            player.HealthControl.TakeDamage(damage);
             Rigidbody2D rb = other.GetComponent<Rigidbody2D>();
             player.PlayerSwordAttack.CanAttack = false;
             player.PlayerSwordAttack.CanMove = false;

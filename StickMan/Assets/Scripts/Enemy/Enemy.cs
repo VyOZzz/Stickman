@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public  class Enemy : MonoBehaviour
+public partial class Enemy : MonoBehaviour
 {
     public int HP;
     private Heathbar heathBar;
@@ -30,7 +30,7 @@ public  class Enemy : MonoBehaviour
     }
     protected virtual void Die()
     {
-        // Logic cho cái chết, như hủy đối tượng hoặc phát hoạt ảnh
+        
         Destroy(gameObject);
     }
 }

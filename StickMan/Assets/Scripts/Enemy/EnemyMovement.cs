@@ -33,10 +33,9 @@ public class EnemyMovement : MonoBehaviour
     {
         if (AnimationStrings.isWalk != null) 
             _animator.SetBool(AnimationStrings.isWalk, true); 
-        Vector2 newPos = new Vector2(player.transform.position.x, transform.position.y); 
+        Vector2 newPos = new Vector2(player.transform.position.x, transform.position.y);
         transform.position =  Vector2.Lerp(transform.position, newPos, moveSpeed * Time.deltaTime);
     }
-
     void FlipDirection()
     {
         if (player.position.x > transform.position.x && !isFacingRight)
