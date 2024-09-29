@@ -48,7 +48,7 @@ MonoBehaviour:
   currentSpeed: 5
   walkSpeed: 5
   runSpeed: 10
-  _playerCtrl: {fileID: 7817412262396208732}
+  playerCtrl: {fileID: 7817412262396208732}
   isWalk: 0
   isRun: 0
 --- !u!1 &3773331185750200552
@@ -202,9 +202,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18aafa3137392477c8009510d6c71fd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 30
   KBForce: 6.58
-  _damage: 20
-  isAttack: 0
   newCooldownTime: 0.5
   comboStep: 0
   lastTimeAttack: 0
@@ -361,9 +360,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18aafa3137392477c8009510d6c71fd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 10
   KBForce: 6.58
-  _damage: 10
-  isAttack: 0
   newCooldownTime: 0.5
   comboStep: 0
   lastTimeAttack: 0
@@ -725,9 +723,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18aafa3137392477c8009510d6c71fd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 20
   KBForce: 6.58
-  _damage: 15
-  isAttack: 0
   newCooldownTime: 0.5
   comboStep: 0
   lastTimeAttack: 0

@@ -1,49 +1,50 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+using Manager;
 using UnityEngine;
-using UnityEngine.Serialization;
 
-public class PlayerJump : MonoBehaviour
+namespace Player
 {
-    [SerializeField] private PlayerCtrl playerCtrl;
-    [SerializeField] private float jumpForce = 20f;
-    [SerializeField] private Rigidbody2D rb;
-    private Animator _animator;
-
-    // sử dụng reset để khi bị quên k gắn 1 componet nào đó thì chỉ việc reset lại là dc.
-    private void Reset()
+    public class PlayerJump : MonoBehaviour
     {
-        LoadCtrl(out playerCtrl);
-    }
+        [SerializeField] private PlayerCtrl playerCtrl;
+        [SerializeField] private float jumpForce = 20f;
+        [SerializeField] private Rigidbody2D rb;
+        private Animator _animator;
 
-    private void LoadCtrl(out PlayerCtrl playerCtrl) => playerCtrl =  FindObjectOfType<PlayerCtrl>();
-
-    private void Awake()
-    {
-        rb = GetComponentInParent<Rigidbody2D>();
-        _animator = GetComponentInParent<Animator>();
-        Debug.Log(_animator != null ? "Animator found" : "Animator not found");
-    }
-    void Update()
-    {
-        // nếu player ở mặt đất thì mới jump được
-        // nhận input từ người chơi
-        if (Input.GetKeyDown(KeyCode.Space) && playerCtrl.GroundChecker.IsGrounded)
+        // sử dụng reset để khi bị quên k gắn 1 componet nào đó thì chỉ việc reset lại là dc.
+        private void Reset()
         {
-            if(playerCtrl.PlayerSwordAttack.CanMove)
-                JumpHandle();
+            LoadCtrl(out playerCtrl);
         }
-    }
-    void JumpHandle()
-    {
-        Debug.Log("jump");
-        //animation nhay
-        _animator.SetTrigger(AnimationStrings.jump);
-        // nhảy
-        rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+
+        private void LoadCtrl(out PlayerCtrl newPlayerCtrl) => 
+            newPlayerCtrl =  FindFirstObjectByType<PlayerCtrl>();
+
+        private void Awake()
+        {
+            rb = GetComponentInParent<Rigidbody2D>();
+            _animator = GetComponentInParent<Animator>();
+            Debug.Log(_animator != null ? "Animator found" : "Animator not found");
+        }
+        void Update()
+        {
+            // nếu player ở mặt đất thì mới jump được
+            // nhận input từ người chơi
+            if (Input.GetKeyDown(KeyCode.Space) && playerCtrl.GroundChecker.IsGrounded)
+            {
+                if(playerCtrl.PlayerSwordAttack.CanMove)
+                    JumpHandle();
+            }
+        }
+        void JumpHandle()
+        {
+            Debug.Log("jump");
+            //animation nhay
+            _animator.SetTrigger(AnimationStrings.jump);
+            // nhảy
+            rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
         
         
         
+        }
     }
 }

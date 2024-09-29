@@ -1,20 +1,19 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Enemy;
+using Manager;
 using UnityEngine;
 
 public class DetectionZone : MonoBehaviour
 {
     private MeleeEnemy _meleeEnemy;
-    private bool hasTarget = false;
+    private bool _hasTarget = false;
     private Animator _animator;
     public bool HasTarget
     {
-        get => hasTarget;
-        set
-        {
-            hasTarget = value;
-        }
+        get => _hasTarget;
+        set => _hasTarget = value;
     }
     private void Awake()
     {

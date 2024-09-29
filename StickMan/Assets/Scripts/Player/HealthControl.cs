@@ -1,47 +1,48 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using Cinemachine;
+using Manager;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public class HealthControl : MonoBehaviour
+namespace Player
 {
-    [SerializeField] private PlayerCtrl playerCtrl;
-    [SerializeField] private int HP = 100;
-    [SerializeField] private Heathbar heathBar;
-    [FormerlySerializedAs("levelManager")] [SerializeField] private GameManager gameManager;
-    [SerializeField] private Animator animator;
-    public int GetHP
+    public class HealthControl : MonoBehaviour
     {
-        get
+        [SerializeField] private PlayerCtrl playerCtrl;
+        [SerializeField] private int HP = 100;
+        [SerializeField] private Heathbar heathBar;
+        [FormerlySerializedAs("levelManager")] [SerializeField] private GameManager gameManager;
+        [SerializeField] private Animator animator;
+        public int GetHP
         {
-            return HP;
+            get
+            {
+                return HP;
+            }
         }
-    }
-    private void Start()
-    {
-        heathBar.SetMaxHeath(HP);
-        animator = GetComponentInParent<Animator>();
-    }
-    public void TakeDamage(int damage)
-    {
-        Debug.Log(HP);
-        HP -= damage;
-        heathBar.SetHeath(HP);
-        if (HP <= 0)
-            Die();
-    }
-    private void Die()
-    {
+        private void Start()
+        {
+            heathBar.SetMaxHeath(HP);
+            animator = GetComponentInParent<Animator>();
+        }
+        public void TakeDamage(int damage)
+        {
+            Debug.Log(HP);
+            HP -= damage;
+            heathBar.SetHeath(HP);
+            if (HP <= 0)
+                Die();
+        }
+        private void Die()
+        {
         
-        StartCoroutine(DieDelay());
-    }
-    IEnumerator DieDelay()
-    {
-        animator.SetBool(AnimationStrings.isDeath, true);
-        yield return new WaitForSeconds(1);
-        Destroy(playerCtrl.gameObject);
-        gameManager.GameOver();
+            StartCoroutine(DieDelay());
+        }
+        IEnumerator DieDelay()
+        {
+            animator.SetBool(AnimationStrings.isDeath, true);
+            yield return new WaitForSeconds(1);
+            Destroy(playerCtrl.gameObject);
+            gameManager.GameOver();
+        }
     }
 }

@@ -169,7 +169,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 1.7825639, y: -0.2348857}
+  m_Offset: {x: 1.0645473, y: -0.2348857}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -179,7 +179,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 3.4422498, y: 3.206501}
+  m_Size: {x: 2.0062165, y: 3.206501}
   m_EdgeRadius: 0
 --- !u!114 &3902766948098991763
 MonoBehaviour:
@@ -291,8 +291,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ee2ae3cd1941489db6eab2c9e5eeab4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  KBForce: 5
   damage: 10
+  KBForce: 5
   detectionZone: {fileID: 3902766948098991763}
   newCooldownTime: 2
   isAttacking: 0
@@ -433,7 +433,7 @@ MonoBehaviour:
   HP: 100
   enemySwordAttack: {fileID: 332952945723803313}
   detectionZone: {fileID: 3902766948098991763}
-  gameManager: {fileID: 0}
+  gameManager: {fileID: 7087960895330467979, guid: 0b12a808713e443eb8aac53df44dd77b, type: 3}
 --- !u!114 &4186583303544255349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -448,7 +448,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 0.3
   rb: {fileID: 8718467333080040671}
-  KBForce: 2
   _animator: {fileID: 1460721001116455524}
   enemySwordAttack: {fileID: 332952945723803313}
 --- !u!70 &5819436495235271210

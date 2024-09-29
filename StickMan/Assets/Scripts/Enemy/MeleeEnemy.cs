@@ -1,35 +1,41 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
-using Unity.VisualScripting;
+using Manager;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public class MeleeEnemy : Enemy
+namespace Enemy
 {
-    [SerializeField] private EnemySwordAttack enemySwordAttack;
-    [SerializeField] private DetectionZone detectionZone;
-    [FormerlySerializedAs("levelManager")] [SerializeField] private GameManager gameManager;
-    private void Awake()
+    public class MeleeEnemy : Enemy
     {
-        detectionZone = GetComponentInChildren<DetectionZone>();
-        enemySwordAttack = GetComponentInChildren<EnemySwordAttack>();
-        gameManager = FindObjectOfType<GameManager>();
-    }
-    private void Update()
-    {
-        if (detectionZone.HasTarget)
+        [SerializeField] private EnemySwordAttack enemySwordAttack;
+        [SerializeField] private DetectionZone detectionZone;
+        [FormerlySerializedAs("levelManager")] [SerializeField] private GameManager gameManager;
+        private void Awake()
         {
-            enemySwordAttack.Attack();            
+            detectionZone = GetComponentInChildren<DetectionZone>();
+            enemySwordAttack = GetComponentInChildren<EnemySwordAttack>();
+            gameManager = FindFirstObjectByType<GameManager>();
         }
-    }
-    // ghi đè hàm Die nếu cần
-    protected override void Die()
-    {
-        base.Die();
-        gameManager.EnemyDefeated();
-        Debug.Log("MeleeEnemy died in a special way!");
-    }
+        private void Update()
+        {
+            if (detectionZone.HasTarget)
+            {
+                enemySwordAttack.Attack();            
+            }
+            else
+            {
+                // đặt lại trạng thái move khi player vút qua enemy mà enemy chưa kịp đánh 
+                // kiểu nếu player đi qua enemy mà enemy chưa kịp đánh thì lúc dó enemy sẽ di chuyển vào hàm attack ở lớp 
+                // ở script EnemySwordAttack thì CanMove = false. Và sẽ kdc chuyển về true nếu enemy k đánh trúng player.
+                enemySwordAttack.CanMove = true;
+            }
+        }
+        // ghi đè hàm Die nếu cần
+        protected override void Die()
+        {
+            base.Die();
+            gameManager.EnemyDefeated();
+            Debug.Log("MeleeEnemy died in a special way!");
+        }
     
+    }
 }

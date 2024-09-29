@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Manager;
+using Player;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -15,7 +17,9 @@ public class GroundChecker : MonoBehaviour
         LoadCtrl(out playerCtrl);
     }
 
-    private void LoadCtrl(out PlayerCtrl playerCtrl) => playerCtrl = FindObjectOfType<PlayerCtrl>();
+    [Obsolete("Obsolete")]
+    private void LoadCtrl(out PlayerCtrl  newPlayerCtrl) => 
+        newPlayerCtrl = FindAnyObjectByType<PlayerCtrl>();
 
     public bool IsGrounded
     {

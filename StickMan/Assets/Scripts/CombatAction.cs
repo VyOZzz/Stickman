@@ -1,11 +1,13 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Enemy;
+using Player;
 using UnityEngine;
 
 public abstract class CombatAction : MonoBehaviour
 {
-   protected int damage = 10;
+   [SerializeField] protected int damage = 10;
    protected float cooldownTime;
    protected bool canAttack = true;
    protected bool canMove = true;
