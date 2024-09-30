@@ -1,3 +1,4 @@
+using Manager;
 using UnityEngine;
 
 namespace Enemy
@@ -28,7 +29,6 @@ namespace Enemy
         }
         protected virtual void Die()
         {
-        
             Destroy(gameObject);
         }
     }

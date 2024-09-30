@@ -47,25 +47,25 @@ MonoBehaviour:
   musicSounds:
   - name: Theme3
     clip: {fileID: 8300000, guid: 4bf72832dbb934263911b3d1e2716aca, type: 3}
-    volume: 0.4
+    volume: 0.3
     pitch: 1
     loop: 1
     source: {fileID: 0}
   - name: Theme2
     clip: {fileID: 8300000, guid: 695103e0c3a1144878e223855a89028d, type: 3}
-    volume: 0.4
+    volume: 0.3
     pitch: 1
     loop: 1
     source: {fileID: 0}
   - name: Theme1
     clip: {fileID: 8300000, guid: b6ab7cfe195294a2aab0a857cda1039a, type: 3}
-    volume: 0.4
+    volume: 0.3
     pitch: 1
     loop: 1
     source: {fileID: 0}
   - name: Theme0
     clip: {fileID: 8300000, guid: 96253db58ad5f40518e097cb3d3e3b04, type: 3}
-    volume: 0.4
+    volume: 0.3
     pitch: 1
     loop: 1
     source: {fileID: 0}
@@ -76,8 +76,8 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
-  - name: run
-    clip: {fileID: 8300000, guid: ba6cb6c7949b64fd483da326c8288297, type: 3}
+  - name: walk
+    clip: {fileID: 8300000, guid: 76675c10cc95849edba4ec40d4c6be0b, type: 3}
     volume: 1
     pitch: 1
     loop: 0
@@ -106,8 +106,20 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
-  - name: enemydeath
+  - name: enemyDeath
     clip: {fileID: 8300000, guid: 351687896089f4a789147fe492aa99b2, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: run
+    clip: {fileID: 8300000, guid: 8be17d2ca99954c4988726a72375179b, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: hurt
+    clip: {fileID: 8300000, guid: 171cb51cc927e4869a5284d3a9edecd4, type: 3}
     volume: 1
     pitch: 1
     loop: 0

@@ -1,3 +1,4 @@
+using Manager;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -11,11 +12,14 @@ namespace Player
         [FormerlySerializedAs("swordAttack")] [SerializeField] private PlayerSwordAttack playerSwordAttack;
         [FormerlySerializedAs("_animator")] public Animator animator;
         [SerializeField] private HealthControl healthControl;
+        [SerializeField] private GameManager gameManager;
         public PlayerMovement PlayerMovement => playerMovement;
         public PlayerJump PlayerJump => playerJump;
         public GroundChecker GroundChecker => groundChecker;
         public PlayerSwordAttack PlayerSwordAttack => playerSwordAttack;
         public HealthControl HealthControl => healthControl;
+        public GameManager GameManager => gameManager;
+        
     
         private void Reset()
         {
@@ -24,6 +28,7 @@ namespace Player
             groundChecker = FindFirstObjectByType<GroundChecker>();
             playerJump = FindFirstObjectByType<PlayerJump>();
             healthControl = FindFirstObjectByType<HealthControl>();
+            gameManager = FindFirstObjectByType<GameManager>();
         }
 
         private void Start()
@@ -38,6 +43,16 @@ namespace Player
                 playerSwordAttack.Attack();
             }
         }
+        public void PlaySlashSound()
+        {
+            FindAnyObjectByType<AudioManager>().PlaySFX("slash");
+        }
 
+        public void Die()
+        {
+            
+            Destroy(gameObject);
+            gameManager.GameOver();
+        }
     }
 }

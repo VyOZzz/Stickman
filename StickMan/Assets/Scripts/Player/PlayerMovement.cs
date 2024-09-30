@@ -10,12 +10,17 @@ namespace Player
         [SerializeField] private float currentSpeed = 5f;
         [SerializeField] private float walkSpeed = 5f;
         [SerializeField] private float runSpeed = 10f;
-        [FormerlySerializedAs("_playerCtrl")] [SerializeField] private PlayerCtrl playerCtrl;
+        private PlayerCtrl playerCtrl;
         private Animator _animator;
         private bool isFacingRight = true;
         private float _horInput;
         [SerializeField] private bool isWalk;
         [SerializeField] private bool isRun;
+
+        public bool IsWalk => isWalk;
+
+        public bool IsRun => isRun;
+        
 // sử dụng reset để chỉ việc reset là sẽ tự gán lại các component
         private void Reset()
         {
@@ -27,6 +32,7 @@ namespace Player
         {
             rb = GetComponentInParent<Rigidbody2D>();
             _animator = GetComponentInParent<Animator>();
+            playerCtrl = GetComponentInParent<PlayerCtrl>();
         }
         private void FixedUpdate()
         {
@@ -35,9 +41,14 @@ namespace Player
                 if (Input.GetKey(KeyCode.LeftShift) && playerCtrl.GroundChecker.IsGrounded)
                 {
                     isRun = true;
+                    // không thể attack khi chạy
+                    playerCtrl.PlayerSwordAttack.CanAttack = false;
+                    isWalk = false;
                 }
                 else
                 {
+                    // trả lại trạng thái có thể tấn công khi hết run
+                    playerCtrl.PlayerSwordAttack.CanAttack = true;
                     isRun = false;
                 }
                 WalkHandle();
@@ -77,7 +88,7 @@ namespace Player
         }
         private void WalkState()
         {
-            if (Mathf.Abs(_horInput) > 0)
+            if (Mathf.Abs(_horInput) > 0 && playerCtrl.GroundChecker.IsGrounded)
             {
                 isWalk = true;
             }

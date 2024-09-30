@@ -17,7 +17,6 @@ public class GroundChecker : MonoBehaviour
         LoadCtrl(out playerCtrl);
     }
 
-    [Obsolete("Obsolete")]
     private void LoadCtrl(out PlayerCtrl  newPlayerCtrl) => 
         newPlayerCtrl = FindAnyObjectByType<PlayerCtrl>();
 

@@ -8,11 +8,16 @@ namespace Manager
         [SerializeField] private GameObject menuPanel;
         [SerializeField] private GameObject tutorialPanel;
         [SerializeField] private GameObject settingPanel;
+        [SerializeField] private GameObject menuLevels;
         public void StartGame()
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            menuLevels.SetActive(true);
         }
-    
+
+        public void QuitMenuLevels()
+        {
+            menuLevels.SetActive(false);
+        }
         // Start is called before the first frame update
         public void OpenTutorial()
         {
@@ -43,6 +48,18 @@ namespace Manager
         {
             Application.Quit();
         }
-    
+
+        public void Level1()
+        {
+            SceneManager.LoadScene(1);
+        }
+        public void Level2()
+        {
+            SceneManager.LoadScene(2);
+        }
+        public void Level3()
+        {
+            SceneManager.LoadScene(3);
+        }
     }
 }

@@ -150,8 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 781f52b45a3a24058a4a2ea4421b8516, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0.5
-  rb: {fileID: 1825778957531201446}
+  moveSpeed: 0.7
   _animator: {fileID: 7750886672395209396}
   enemySwordAttack: {fileID: 4202916123385560536}
 --- !u!70 &3274745723573085486

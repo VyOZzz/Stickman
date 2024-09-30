@@ -59,6 +59,7 @@ namespace Manager
                 Debug.LogWarning("Sound not found: " + name);
                 return;
             }
+            Debug.Log("Playing sound: " + name);
             s.source.Play();
         }
         public void SetVolumeSFX(float value)

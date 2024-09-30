@@ -40,7 +40,8 @@ namespace Manager
             victoryText.SetActive(true);
             homeButton.SetActive(true);
             retryButton.SetActive(true);
-            continueButton.SetActive(true);
+            if( SceneManager.GetActiveScene().buildIndex != 3 )
+                continueButton.SetActive(true);
             FindFirstObjectByType<AudioManager>().PlaySFX("victory");
             // timescale =0
             // set active true
@@ -59,7 +60,7 @@ namespace Manager
 
         public void Continue()
         {
-        
+            
             Time.timeScale = 1;
             // tiep tuc timescale= 1
             // load next level
@@ -76,7 +77,7 @@ namespace Manager
 
         public void EnemyDefeated()
         {
-            FindFirstObjectByType<AudioManager>().PlaySFX("enemydeath");
+            FindFirstObjectByType<AudioManager>().PlaySFX("enemyDeath");
             enemyManager.countEnemy--;
             enemyManager.enemyAlive--;
         }

@@ -44,7 +44,9 @@ namespace Manager
         {
             int len = levelDatas[currentLevel].enemyPrefab.Count; // số lượng kiểu enemy spawn ở màn này
             Vector2 spawnPos = new Vector3(Random.Range(-50,50), 0);
-            Instantiate(levelDatas[currentLevel].enemyPrefab[Random.Range(0, len)], spawnPos, Quaternion.identity);
+            int index = Random.Range(0, len);
+            Instantiate(levelDatas[currentLevel].enemyPrefab[index], spawnPos, Quaternion.identity);
+            
         }
 
     }

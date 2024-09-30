@@ -169,7 +169,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 1.0645473, y: -0.2348857}
+  m_Offset: {x: 0.83778477, y: -0.2348857}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -179,7 +179,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2.0062165, y: 3.206501}
+  m_Size: {x: 1.5526915, y: 3.206501}
   m_EdgeRadius: 0
 --- !u!114 &3902766948098991763
 MonoBehaviour:
@@ -446,8 +446,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 781f52b45a3a24058a4a2ea4421b8516, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0.3
-  rb: {fileID: 8718467333080040671}
+  moveSpeed: 0.5
   _animator: {fileID: 1460721001116455524}
   enemySwordAttack: {fileID: 332952945723803313}
 --- !u!70 &5819436495235271210

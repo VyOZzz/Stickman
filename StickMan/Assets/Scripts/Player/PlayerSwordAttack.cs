@@ -7,6 +7,7 @@ namespace Player
 {
     public class PlayerSwordAttack : CombatAction
     {
+        private PlayerCtrl _playerCtrl;
         [SerializeField] private float KBForce = 5f;
         private Animator animator;
         [SerializeField] private float newCooldownTime = 0.5f;
@@ -32,6 +33,7 @@ namespace Player
         {
             SetCooldownTime(newCooldownTime);
             animator = GetComponentInParent<Animator>();
+            _playerCtrl = GetComponentInParent<PlayerCtrl>();
         }
 
         private void Update()
@@ -39,7 +41,8 @@ namespace Player
             
             // Kiểm tra nếu hoạt ảnh tấn công đã kết thúc
             AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
-    
+          
+            
             // Giả sử bạn có các trạng thái animation với tên là "Attack1", "Attack2", "Attack3" cho combo
             if (stateInfo.IsName("Attack1") || stateInfo.IsName("Attack2") || stateInfo.IsName("Attack3"))
             {
@@ -66,9 +69,7 @@ namespace Player
         {
             // animation attack 
             
-            //audio when attack
-            if(!IsPointerOverUI()) // check nếu trỏ vào UI thì sẽ k play sound attack
-                FindAnyObjectByType<AudioManager>().PlaySFX("slash");
+            
             //combostep handle
             ComboHandle();
             //cooldown
@@ -126,6 +127,9 @@ namespace Player
                 animator.SetTrigger(AnimationStrings.attackTrigger);
                 animator.SetInteger(AnimationStrings.comboStep, 3);
                 comboStep = 3;
+            }else if (comboStep == 3)
+            { // Không cho phép combo tiếp tục nếu đã đạt bước thứ 3
+                return;
             }
         }
 
@@ -133,6 +137,15 @@ namespace Player
         {
             return EventSystem.current.IsPointerOverGameObject();
         }
-    
+
+        // private void HandleAttackSound()
+        // {
+        //     //audio when attack
+        //     //điều kiện để khi mà player k thể attack thì k play sound
+        //     if(!IsPointerOverUI()  // check nếu trỏ vào UI thì sẽ k play sound attack
+        //        && CanAttack )
+        //         FindAnyObjectByType<AudioManager>().PlaySFX("slash");
+        // }
+        
     }
 }

@@ -12,6 +12,7 @@ namespace Player
         [SerializeField] private Heathbar heathBar;
         [FormerlySerializedAs("levelManager")] [SerializeField] private GameManager gameManager;
         [SerializeField] private Animator animator;
+        private AudioManager _audioManager;
         public int GetHP
         {
             get
@@ -23,26 +24,19 @@ namespace Player
         {
             heathBar.SetMaxHeath(HP);
             animator = GetComponentInParent<Animator>();
+            _audioManager = FindFirstObjectByType<AudioManager>();
         }
         public void TakeDamage(int damage)
         {
             Debug.Log(HP);
             HP -= damage;
             heathBar.SetHeath(HP);
+            if(HP > 0) //điều kiện để khi player chết sẽ không phát ra sound hurt 
+                _audioManager.PlaySFX("hurt");
             if (HP <= 0)
-                Die();
-        }
-        private void Die()
-        {
-        
-            StartCoroutine(DieDelay());
-        }
-        IEnumerator DieDelay()
-        {
-            animator.SetBool(AnimationStrings.isDeath, true);
-            yield return new WaitForSeconds(1);
-            Destroy(playerCtrl.gameObject);
-            gameManager.GameOver();
+            {
+                animator.SetBool(AnimationStrings.isDeath, true);
+            }
         }
     }
 }

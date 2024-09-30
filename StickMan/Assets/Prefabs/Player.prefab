@@ -48,7 +48,6 @@ MonoBehaviour:
   currentSpeed: 5
   walkSpeed: 5
   runSpeed: 10
-  playerCtrl: {fileID: 7817412262396208732}
   isWalk: 0
   isRun: 0
 --- !u!1 &3773331185750200552
@@ -457,7 +456,6 @@ Transform:
   - {fileID: 239421483652877341}
   - {fileID: 6363054487654423047}
   - {fileID: 243922291658140779}
-  - {fileID: 9152393304910427143}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7817412262396208732
@@ -478,6 +476,7 @@ MonoBehaviour:
   playerSwordAttack: {fileID: 8337307761172781249}
   animator: {fileID: 0}
   healthControl: {fileID: 5599955657768505465}
+  gameManager: {fileID: 0}
 --- !u!212 &6206857807462348459
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -729,37 +728,6 @@ MonoBehaviour:
   comboStep: 0
   lastTimeAttack: 0
   comboWindow: 0.75
---- !u!1 &7928454755302029848
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 9152393304910427143}
-  m_Layer: 7
-  m_Name: Bow
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &9152393304910427143
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7928454755302029848}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2942962833539727242}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &6903884150223826608
 PrefabInstance:
   m_ObjectHideFlags: 0
