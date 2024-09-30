@@ -17158,7 +17158,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 984026918269195489, guid: 53541b4c74b61410f95bd61eacc41b1b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1305933650803913116, guid: 53541b4c74b61410f95bd61eacc41b1b, type: 3}
       propertyPath: m_Pivot.x
@@ -17256,6 +17256,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3583221642816860349, guid: 53541b4c74b61410f95bd61eacc41b1b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4425113594553846076, guid: 53541b4c74b61410f95bd61eacc41b1b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -17303,6 +17307,14 @@ PrefabInstance:
     - target: {fileID: 7960407421406961488, guid: 53541b4c74b61410f95bd61eacc41b1b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Retry
+      objectReference: {fileID: 0}
+    - target: {fileID: 8674413365190593849, guid: 53541b4c74b61410f95bd61eacc41b1b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8842629092088457689, guid: 53541b4c74b61410f95bd61eacc41b1b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17898,6 +17910,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1595279461}
     - target: {fileID: 7087960895330467979, guid: 0b12a808713e443eb8aac53df44dd77b, type: 3}
+      propertyPath: gameOverPanel
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7087960895330467979, guid: 0b12a808713e443eb8aac53df44dd77b, type: 3}
       propertyPath: settingButton
       value: 
       objectReference: {fileID: 33674023}
@@ -18089,6 +18105,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4875026138055000897, guid: ed94169d5109a42049b41da14474d2e3, type: 3}
+      propertyPath: KBForce
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5599955657768505465, guid: ed94169d5109a42049b41da14474d2e3, type: 3}
       propertyPath: HP
       value: 100
@@ -18105,6 +18125,10 @@ PrefabInstance:
       propertyPath: levelManager
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 7392949388277398118, guid: ed94169d5109a42049b41da14474d2e3, type: 3}
+      propertyPath: KBForce
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7505697365286844236, guid: ed94169d5109a42049b41da14474d2e3, type: 3}
       propertyPath: m_Name
       value: Player
@@ -18113,6 +18137,22 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 1320147492}
+    - target: {fileID: 7817412262396208732, guid: ed94169d5109a42049b41da14474d2e3, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1277615318}
+    - target: {fileID: 7817412262396208732, guid: ed94169d5109a42049b41da14474d2e3, type: 3}
+      propertyPath: playerSwordAttack
+      value: 
+      objectReference: {fileID: 2771373326367480602}
+    - target: {fileID: 8337307761172781249, guid: ed94169d5109a42049b41da14474d2e3, type: 3}
+      propertyPath: damage
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8337307761172781249, guid: ed94169d5109a42049b41da14474d2e3, type: 3}
+      propertyPath: KBForce
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8337307761172781249, guid: ed94169d5109a42049b41da14474d2e3, type: 3}
       propertyPath: _damage
       value: 10
@@ -18122,6 +18162,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed94169d5109a42049b41da14474d2e3, type: 3}
+--- !u!114 &2771373326367480602 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7392949388277398118, guid: ed94169d5109a42049b41da14474d2e3, type: 3}
+  m_PrefabInstance: {fileID: 2771373326367480601}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18aafa3137392477c8009510d6c71fd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

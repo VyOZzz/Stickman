@@ -60,6 +60,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8290728931542242590}
   - component: {fileID: 2711609264115653134}
+  - component: {fileID: 6968503599095769744}
   m_Layer: 0
   m_Name: Jump
   m_TagString: Untagged
@@ -76,7 +77,7 @@ Transform:
   m_GameObject: {fileID: 3773331185750200552}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.15, y: -0.09, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -95,8 +96,45 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCtrl: {fileID: 7817412262396208732}
-  jumpForce: 20.5
+  jumpForce: 30
   rb: {fileID: 0}
+--- !u!70 &6968503599095769744
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3773331185750200552}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0.02}
+  m_Size: {x: 0.5, y: 1.31}
+  m_Direction: 0
 --- !u!1 &3941130198696690144
 GameObject:
   m_ObjectHideFlags: 0
@@ -202,7 +240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 30
-  KBForce: 6.58
+  KBForce: 8
   newCooldownTime: 0.5
   comboStep: 0
   lastTimeAttack: 0
@@ -360,7 +398,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
-  KBForce: 6.58
+  KBForce: 2
   newCooldownTime: 0.5
   comboStep: 0
   lastTimeAttack: 0
@@ -428,6 +466,7 @@ GameObject:
   - component: {fileID: 3302674664683183204}
   - component: {fileID: 2770793296492137475}
   - component: {fileID: 5199053793728461145}
+  - component: {fileID: 3674175398345400586}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -473,8 +512,8 @@ MonoBehaviour:
   playerMovement: {fileID: 7846875992764447834}
   groundChecker: {fileID: 6495544390812781594}
   playerJump: {fileID: 2711609264115653134}
-  playerSwordAttack: {fileID: 8337307761172781249}
-  animator: {fileID: 0}
+  playerSwordAttack: {fileID: 7392949388277398118}
+  animator: {fileID: 2770793296492137475}
   healthControl: {fileID: 5599955657768505465}
   gameManager: {fileID: 0}
 --- !u!212 &6206857807462348459
@@ -544,7 +583,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
-  m_Mass: 2.0957842
+  m_Mass: 3.4488206
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 1
@@ -618,6 +657,18 @@ CapsuleCollider2D:
   m_Offset: {x: -0.013655835, y: -0.25382254}
   m_Size: {x: 0.6123396, y: 1.652558}
   m_Direction: 0
+--- !u!114 &3674175398345400586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7505697365286844236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d88e8c728a7b843bfbb34f4d7f77aef4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7710516209547391425
 GameObject:
   m_ObjectHideFlags: 0
@@ -723,7 +774,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 20
-  KBForce: 6.58
+  KBForce: 2
   newCooldownTime: 0.5
   comboStep: 0
   lastTimeAttack: 0
@@ -739,6 +790,10 @@ PrefabInstance:
     - target: {fileID: 3090104628569808657, guid: 15739624908a843b88508a1414a1878c, type: 3}
       propertyPath: m_Name
       value: Canvas (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5155936559013527045, guid: 15739624908a843b88508a1414a1878c, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 6678011441550672603, guid: 15739624908a843b88508a1414a1878c, type: 3}
       propertyPath: m_Pivot.x

@@ -90,6 +90,7 @@ namespace Player
             {
                 Debug.Log("take damage");
                 enemy.TakeDamage(damage);
+                animator.SetTrigger(AnimationStrings.hitTrigger);
                 Rigidbody2D enemyRb = other.GetComponent<Rigidbody2D>();
             
                 EnemySwordAttack enemySwordAttack = other.GetComponentInChildren<EnemySwordAttack>();

@@ -44,8 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7f8c03e9b68b4f4c98ec4da3ee665ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skeletonPrefab: {fileID: 1876727520199027912, guid: 1940b9ae2edc6404d920e4194804d3a8, type: 3}
-  mushroom: {fileID: 3207868130293865184, guid: 53895388d4d534dd49a3fc86a110d8f4, type: 3}
   levelDatas:
   - enemyPrefab:
     - {fileID: 3207868130293865184, guid: 53895388d4d534dd49a3fc86a110d8f4, type: 3}
@@ -55,16 +53,16 @@ MonoBehaviour:
   - enemyPrefab:
     - {fileID: 3207868130293865184, guid: 53895388d4d534dd49a3fc86a110d8f4, type: 3}
     - {fileID: 1876727520199027912, guid: 1940b9ae2edc6404d920e4194804d3a8, type: 3}
-    totalEnemies: 15
+    totalEnemies: 9
     enemiesPerWave: 3
-    numberWave: 5
+    numberWave: 3
   - enemyPrefab:
-    - {fileID: 3207868130293865184, guid: 53895388d4d534dd49a3fc86a110d8f4, type: 3}
     - {fileID: 1876727520199027912, guid: 1940b9ae2edc6404d920e4194804d3a8, type: 3}
     - {fileID: 3313689291477764473, guid: cf083bf33d0c34cdcafdbd154e0f55e9, type: 3}
-    totalEnemies: 15
+    totalEnemies: 9
     enemiesPerWave: 3
-    numberWave: 5
+    numberWave: 3
   countEnemy: 0
+  enemyAlive: 0
   countWaves: 0
   currentLevel: 0

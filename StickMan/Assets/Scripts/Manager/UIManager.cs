@@ -9,11 +9,25 @@ namespace Manager
         [SerializeField] private GameObject tutorialPanel;
         [SerializeField] private GameObject settingPanel;
         [SerializeField] private GameObject menuLevels;
+        // thêm các nút level để điều chỉnh khi chưa qua màn
+        [SerializeField] private GameObject level1;
+        [SerializeField] private GameObject level2;
+        [SerializeField] private GameObject level3;
         public void StartGame()
         {
             menuLevels.SetActive(true);
+            level1.SetActive(true);
+            if (PlayerPrefs.GetInt("level", 1) < 2)
+            {
+                level2.SetActive(false);
+                level3.SetActive(false);
+            }
+            else if(PlayerPrefs.GetInt("level", 1) < 3)
+            {
+                level2.SetActive(false);
+            }
         }
-
+        
         public void QuitMenuLevels()
         {
             menuLevels.SetActive(false);

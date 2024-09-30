@@ -1,3 +1,4 @@
+using System.Collections;
 using Manager;
 using Player;
 using UnityEngine;
@@ -9,7 +10,6 @@ namespace Enemy
     {
         [SerializeField] private float KBForce = 5f;
         private Animator _animator;
-        [SerializeField] private DetectionZone detectionZone;
         [SerializeField] private float newCooldownTime = 0.5f;
         [SerializeField] private bool isAttacking = false; // Thêm biến để theo dõi trạng thái tấn công
 
@@ -34,20 +34,18 @@ namespace Enemy
             SetDamage(damage);
             SetCooldownTime(newCooldownTime);
             _animator = GetComponentInParent<Animator>();
-            detectionZone = GetComponent<DetectionZone>();
         }
         public override void Attack()
         {
-            if (canAttack && !isAttacking && canMove )
+            if (CanAttack && !isAttacking && canMove )
             {
                 CanMove = false;
                 isAttacking = true; // theo dõi trạng thái tấn công
-                // animation attack
-                _animator.SetTrigger(AnimationStrings.attackTrigger);
-                //cooldown
+                //thực hiện chém 
                 StartCoroutine(AttackCooldown());
             }
         }
+        // chém trúng thì trừ máu của người chơi 
         private void  OnTriggerEnter2D(Collider2D other)
         {
             if( other.gameObject.CompareTag("Player"))
@@ -87,6 +85,14 @@ namespace Enemy
             isAttacking = false;
             canMove = true;
         }
-    
+
+        protected override IEnumerator AttackCooldown()
+        {
+            CanAttack = false;
+            _animator.SetBool(AnimationStrings.canAttack, CanAttack);
+            yield return new WaitForSeconds(cooldownTime);
+            CanAttack = true;
+            _animator.SetBool(AnimationStrings.canAttack, CanAttack);
+        }
     }
 }

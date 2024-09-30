@@ -294,7 +294,7 @@ MonoBehaviour:
   damage: 10
   KBForce: 5
   detectionZone: {fileID: 3902766948098991763}
-  newCooldownTime: 2
+  newCooldownTime: 1
   isAttacking: 0
 --- !u!1 &3207868130293865184
 GameObject:
@@ -430,7 +430,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca4a938abf5ee4941a4a26b00b3d0086, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 100
+  HP: 130
   enemySwordAttack: {fileID: 332952945723803313}
   detectionZone: {fileID: 3902766948098991763}
   gameManager: {fileID: 7087960895330467979, guid: 0b12a808713e443eb8aac53df44dd77b, type: 3}

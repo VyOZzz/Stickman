@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 namespace Manager
 {
@@ -26,7 +27,6 @@ namespace Manager
             // Đặt Time.timeScale = 1 khi bắt đầu game
             Time.timeScale = 1;
         }
-
         private void Update()
         {
             if (enemyManager.countEnemy <= 0)
@@ -40,8 +40,13 @@ namespace Manager
             victoryText.SetActive(true);
             homeButton.SetActive(true);
             retryButton.SetActive(true);
+            settingButton.SetActive(true);
+            int currentLevel = SceneManager.GetActiveScene().buildIndex;
+            if(PlayerPrefs.GetInt("level", 1) < currentLevel )
+                PlayerPrefs.SetInt("level", currentLevel  );
             if( SceneManager.GetActiveScene().buildIndex != 3 )
                 continueButton.SetActive(true);
+            else continueButton.SetActive(false);
             FindFirstObjectByType<AudioManager>().PlaySFX("victory");
             // timescale =0
             // set active true
@@ -53,6 +58,7 @@ namespace Manager
             gameOverText.SetActive(true);
             homeButton.SetActive(true);
             retryButton.SetActive(true);
+            settingButton.SetActive(true);
             continueButton.SetActive(false);
             // set active true
             // time.timescale = 0 de dung thoi gian
@@ -124,9 +130,10 @@ namespace Manager
         }
         IEnumerator DelayVictory()
         {
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(2);
             Victory();
         }
+        // ReSharper disable Unity.PerformanceAnalysis
         
     }
 }

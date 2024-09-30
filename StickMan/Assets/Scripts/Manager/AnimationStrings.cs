@@ -12,5 +12,7 @@ namespace Manager
         public static string isIdle = "isIdle";
         public static string isRun = "isRun";
         public static string comboStep = "comboStep";
+        public static string canAttack = "canAttack";
+        public static string hitTrigger = "hit";
     }
 }

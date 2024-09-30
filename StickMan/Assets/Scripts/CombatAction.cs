@@ -13,8 +13,9 @@ public abstract class CombatAction : MonoBehaviour
    protected bool canMove = true;
 
    // sử dụng IEnumerator để cooldown
-   protected IEnumerator AttackCooldown()
+   protected virtual IEnumerator AttackCooldown()
    {
+      
       canAttack = false;
       yield return new WaitForSeconds(cooldownTime);
       canAttack = true;

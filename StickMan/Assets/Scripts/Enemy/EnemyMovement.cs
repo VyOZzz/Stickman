@@ -33,7 +33,7 @@ namespace Enemy
             Vector2 newPos = new Vector2(player.transform.position.x, transform.position.y);
             transform.position =  Vector2.Lerp(transform.position, newPos, moveSpeed * Time.deltaTime);
         }
-        void FlipDirection()
+        private void FlipDirection()
         {
             if (player.position.x > transform.position.x && !isFacingRight)
             {

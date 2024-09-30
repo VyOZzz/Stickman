@@ -17,7 +17,7 @@ namespace Enemy
         }
         private void Update()
         {
-            if (detectionZone.HasTarget)
+            if (detectionZone.HasTarget && enemySwordAttack.CanAttack)
             {
                 enemySwordAttack.Attack();            
             }
