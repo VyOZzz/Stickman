@@ -14,5 +14,6 @@ namespace Manager
         public static string comboStep = "comboStep";
         public static string canAttack = "canAttack";
         public static string hitTrigger = "hit";
+        public static string canAttack2 = "canAttack2";
     }
 }

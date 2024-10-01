@@ -31,8 +31,9 @@ namespace Player
             Debug.Log(HP);
             HP -= damage;
             heathBar.SetHeath(HP);
-            if(HP > 0) //điều kiện để khi player chết sẽ không phát ra sound hurt 
-                _audioManager.PlaySFX("hurt");
+            // play audio hurt
+            animator.SetTrigger(AnimationStrings.hitTrigger);
+            _audioManager.PlaySFX("hurt");
             if (HP <= 0)
             {
                 animator.SetBool(AnimationStrings.isDeath, true);

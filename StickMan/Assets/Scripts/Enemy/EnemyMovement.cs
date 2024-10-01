@@ -23,7 +23,8 @@ namespace Enemy
             if(player != null && enemySwordAttack.CanMove )
             {
                 MoveToPlayer();
-                FlipDirection();
+                if(!enemySwordAttack.IsAttacking)
+                    FlipDirection();
             }
         }
         void MoveToPlayer()

@@ -13,11 +13,7 @@ namespace Enemy
         private Animator _animator;
         [SerializeField] private float newCooldownTime;
         [SerializeField] private bool isAttacking = false; // Thêm biến để theo dõi trạng thái tấn công
-        private bool isFirstAttack = true;
-        private float cooldownTimer;
-        private bool isCooldown = false;
         [SerializeField] private float animationDuration;
-
         public bool CanMove
         {
             get => canMove; 
@@ -29,7 +25,11 @@ namespace Enemy
             get => canAttack;
             set => canAttack = value;
         }
-
+        public bool IsAttacking
+        {
+            get => isAttacking;
+            set => isAttacking = value;
+        }
         void SetCooldownTime(float newTimeToCooldown)
         {
             base.cooldownTime = newTimeToCooldown;
@@ -57,8 +57,6 @@ namespace Enemy
                 HandleAttackOnPlayer(other);
             }
         }
-
-       
         private void HandleAttackOnPlayer(Collider2D other)
         {
             var player = other.gameObject.GetComponent<PlayerCtrl>();
@@ -91,18 +89,19 @@ namespace Enemy
         // Coroutine to handle attack animation and cooldown
         private IEnumerator HandleAttackAnimation()
         {
+            
             _animator.SetBool(AnimationStrings.canAttack, true); // Start attack animation
             isAttacking = true; // Mark as attacking
             yield return new WaitForSeconds(animationDuration); // Wait for animation duration
             _animator.SetBool(AnimationStrings.canAttack, false); // Stop attack animation
-
+            isAttacking = false; // Reset attack state
             CanAttack = false; // Disable attack temporarily
             yield return new WaitForSeconds(cooldownTime); // Wait for cooldown
             CanAttack = true; // Re-enable attack
-            isAttacking = false; // Reset attack state
+            
             CanMove = true; // Allow movement after attack
         }
-
+        
         
     }
 }

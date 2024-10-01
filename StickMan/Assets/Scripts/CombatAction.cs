@@ -30,7 +30,6 @@ public abstract class CombatAction : MonoBehaviour
    protected IEnumerator ResetCombatantState(CombatAction combatAction)
    {
       yield return new WaitForSeconds(0.5f);
-      combatAction.canAttack = true;
       combatAction.canMove = true;
    }
    

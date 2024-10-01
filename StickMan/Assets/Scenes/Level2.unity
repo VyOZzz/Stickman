@@ -17321,6 +17321,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53541b4c74b61410f95bd61eacc41b1b, type: 3}
+--- !u!1 &559801765 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1421498629866506349, guid: 53541b4c74b61410f95bd61eacc41b1b, type: 3}
+  m_PrefabInstance: {fileID: 559801764}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &612117267
 GameObject:
   m_ObjectHideFlags: 0
@@ -17889,6 +17894,10 @@ PrefabInstance:
       propertyPath: homeButton
       value: 
       objectReference: {fileID: 34161071}
+    - target: {fileID: 7087960895330467979, guid: 0b12a808713e443eb8aac53df44dd77b, type: 3}
+      propertyPath: pauseButton
+      value: 
+      objectReference: {fileID: 559801765}
     - target: {fileID: 7087960895330467979, guid: 0b12a808713e443eb8aac53df44dd77b, type: 3}
       propertyPath: retryButton
       value: 

@@ -90,11 +90,8 @@ namespace Player
             {
                 Debug.Log("take damage");
                 enemy.TakeDamage(damage);
-                animator.SetTrigger(AnimationStrings.hitTrigger);
                 Rigidbody2D enemyRb = other.GetComponent<Rigidbody2D>();
-            
                 EnemySwordAttack enemySwordAttack = other.GetComponentInChildren<EnemySwordAttack>();
-            
                 if (enemyRb != null && enemySwordAttack != null)
                 {
                     // make enemy cannot attack when be attacked
@@ -105,7 +102,6 @@ namespace Player
                     // Apply knockback force
                     enemyRb.AddForce(knockbackDirection * KBForce, ForceMode2D.Impulse);
                 }
-
                 StartCoroutine(ResetCombatantState(enemySwordAttack));
             }
         }

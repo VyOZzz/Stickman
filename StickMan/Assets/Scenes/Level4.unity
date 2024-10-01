@@ -175,6 +175,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1444677921}
     - target: {fileID: 7087960895330467979, guid: 0b12a808713e443eb8aac53df44dd77b, type: 3}
+      propertyPath: pauseButton
+      value: 
+      objectReference: {fileID: 916377298}
+    - target: {fileID: 7087960895330467979, guid: 0b12a808713e443eb8aac53df44dd77b, type: 3}
       propertyPath: retryButton
       value: 
       objectReference: {fileID: 1976093960}
@@ -17677,6 +17681,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 130a096ea086a4b39927623d02b33a79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &916377298 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1421498629866506349, guid: 53541b4c74b61410f95bd61eacc41b1b, type: 3}
+  m_PrefabInstance: {fileID: 608388921}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1058363274 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 984026918269195489, guid: 53541b4c74b61410f95bd61eacc41b1b, type: 3}
@@ -18072,7 +18081,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5599955657768505465, guid: ed94169d5109a42049b41da14474d2e3, type: 3}
       propertyPath: HP
-      value: 100000
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5599955657768505465, guid: ed94169d5109a42049b41da14474d2e3, type: 3}
       propertyPath: heathBar

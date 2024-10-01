@@ -15,6 +15,7 @@ namespace Manager
         [SerializeField]private GameObject retryButton;
         [SerializeField] private GameObject settingPopUp;
         [SerializeField] private GameObject settingButton;
+        [SerializeField] private GameObject pauseButton;
         private void Awake()
         {
             // set active false
@@ -41,6 +42,7 @@ namespace Manager
             homeButton.SetActive(true);
             retryButton.SetActive(true);
             settingButton.SetActive(true);
+            pauseButton.SetActive(false);
             int currentLevel = SceneManager.GetActiveScene().buildIndex;
             if(PlayerPrefs.GetInt("level", 1) < currentLevel )
                 PlayerPrefs.SetInt("level", currentLevel  );
@@ -61,6 +63,7 @@ namespace Manager
             retryButton.SetActive(true);
             settingButton.SetActive(true);
             continueButton.SetActive(false);
+            pauseButton.SetActive(false);
             // set active true
             // time.timescale = 0 de dung thoi gian
         }
