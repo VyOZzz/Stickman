@@ -44,7 +44,8 @@ namespace Manager
             int currentLevel = SceneManager.GetActiveScene().buildIndex;
             if(PlayerPrefs.GetInt("level", 1) < currentLevel )
                 PlayerPrefs.SetInt("level", currentLevel  );
-            if( SceneManager.GetActiveScene().buildIndex != 3 )
+            // scene 4 là scene cuối nên k được hiêjn continue
+            if( SceneManager.GetActiveScene().buildIndex != 4 )
                 continueButton.SetActive(true);
             else continueButton.SetActive(false);
             FindFirstObjectByType<AudioManager>().PlaySFX("victory");

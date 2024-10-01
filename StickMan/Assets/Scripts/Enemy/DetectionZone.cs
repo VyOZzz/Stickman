@@ -7,7 +7,6 @@ using UnityEngine;
 
 public class DetectionZone : MonoBehaviour
 {
-    private MeleeEnemy _meleeEnemy;
     private bool _hasTarget = false;
     private Animator _animator;
     public bool HasTarget
@@ -18,7 +17,6 @@ public class DetectionZone : MonoBehaviour
     private void Awake()
     {
         _animator = GetComponentInParent<Animator>();
-        _meleeEnemy = GetComponentInParent<MeleeEnemy>();
     }
     private void OnTriggerEnter2D(Collider2D other)
     {

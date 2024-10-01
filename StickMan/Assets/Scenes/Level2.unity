@@ -18107,7 +18107,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4875026138055000897, guid: ed94169d5109a42049b41da14474d2e3, type: 3}
       propertyPath: KBForce
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5599955657768505465, guid: ed94169d5109a42049b41da14474d2e3, type: 3}
       propertyPath: HP
@@ -18151,7 +18151,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8337307761172781249, guid: ed94169d5109a42049b41da14474d2e3, type: 3}
       propertyPath: KBForce
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8337307761172781249, guid: ed94169d5109a42049b41da14474d2e3, type: 3}
       propertyPath: _damage

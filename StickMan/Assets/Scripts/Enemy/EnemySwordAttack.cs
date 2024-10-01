@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Manager;
 using Player;
@@ -10,12 +11,16 @@ namespace Enemy
     {
         [SerializeField] private float KBForce = 5f;
         private Animator _animator;
-        [SerializeField] private float newCooldownTime = 0.5f;
+        [SerializeField] private float newCooldownTime;
         [SerializeField] private bool isAttacking = false; // Thêm biến để theo dõi trạng thái tấn công
+        private bool isFirstAttack = true;
+        private float cooldownTimer;
+        private bool isCooldown = false;
+        [SerializeField] private float animationDuration;
 
         public bool CanMove
         {
-            get => canMove; // Không cần khai báo setter nếu không cần thiết.
+            get => canMove; 
             set => canMove = value;
         }
 
@@ -35,14 +40,13 @@ namespace Enemy
             SetCooldownTime(newCooldownTime);
             _animator = GetComponentInParent<Animator>();
         }
+
         public override void Attack()
         {
-            if (CanAttack && !isAttacking && canMove )
+            if ((CanAttack) && !isAttacking && canMove )
             {
                 CanMove = false;
-                isAttacking = true; // theo dõi trạng thái tấn công
-                //thực hiện chém 
-                StartCoroutine(AttackCooldown());
+                StartCoroutine(HandleAttackAnimation());
             }
         }
         // chém trúng thì trừ máu của người chơi 
@@ -54,12 +58,12 @@ namespace Enemy
             }
         }
 
+       
         private void HandleAttackOnPlayer(Collider2D other)
         {
             var player = other.gameObject.GetComponent<PlayerCtrl>();
             if (player != null)
             {
-                Debug.Log("HIT");
                 player.HealthControl.TakeDamage(damage);
                 Rigidbody2D rb = other.GetComponent<Rigidbody2D>();
                 player.PlayerSwordAttack.CanAttack = false;
@@ -74,10 +78,8 @@ namespace Enemy
                 }
             }
             // khôi phục khả năng di chuyển và tấn công của player
-            StartCoroutine(ResetPlayerState(player.PlayerSwordAttack));
-            CanMove = true; // khôi phục khả năng di chuyển của enemy sau khi tấn công
-            
-            isAttacking = false; // khi enemy đánh player xong thì isAttacking chuyển về false để đánh tiếp 
+            StartCoroutine(ResetCombatantState(player.PlayerSwordAttack));
+           
         }
 
         public void StopEnemyAttack()
@@ -86,13 +88,21 @@ namespace Enemy
             canMove = true;
         }
 
-        protected override IEnumerator AttackCooldown()
+        // Coroutine to handle attack animation and cooldown
+        private IEnumerator HandleAttackAnimation()
         {
-            CanAttack = false;
-            _animator.SetBool(AnimationStrings.canAttack, CanAttack);
-            yield return new WaitForSeconds(cooldownTime);
-            CanAttack = true;
-            _animator.SetBool(AnimationStrings.canAttack, CanAttack);
+            _animator.SetBool(AnimationStrings.canAttack, true); // Start attack animation
+            isAttacking = true; // Mark as attacking
+            yield return new WaitForSeconds(animationDuration); // Wait for animation duration
+            _animator.SetBool(AnimationStrings.canAttack, false); // Stop attack animation
+
+            CanAttack = false; // Disable attack temporarily
+            yield return new WaitForSeconds(cooldownTime); // Wait for cooldown
+            CanAttack = true; // Re-enable attack
+            isAttacking = false; // Reset attack state
+            CanMove = true; // Allow movement after attack
         }
+
+        
     }
 }

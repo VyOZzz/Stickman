@@ -110,7 +110,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 2
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -421,9 +421,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 20
   KBForce: 5
-  detectionZone: {fileID: 3031097818308993627}
   newCooldownTime: 0.5
   isAttacking: 0
+  animationDuration: 0.38
 --- !u!1 &7110974714397899259
 GameObject:
   m_ObjectHideFlags: 0

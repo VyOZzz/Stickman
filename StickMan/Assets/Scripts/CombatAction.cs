@@ -27,16 +27,11 @@ public abstract class CombatAction : MonoBehaviour
    {
       damage = newDamane;
    }
-   protected IEnumerator ResetEnemyState(EnemySwordAttack thing)
+   protected IEnumerator ResetCombatantState(CombatAction combatAction)
    {
       yield return new WaitForSeconds(0.5f);
-      thing.CanAttack = true;
-      thing.CanMove = true;
+      combatAction.canAttack = true;
+      combatAction.canMove = true;
    }
-   protected IEnumerator ResetPlayerState(PlayerSwordAttack thing )
-   {
-      yield return new WaitForSeconds(0.5f);
-      thing.CanAttack = true;
-      thing.canMove = true;
-   }
+   
 }

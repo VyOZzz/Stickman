@@ -13,6 +13,7 @@ namespace Manager
         [SerializeField] private GameObject level1;
         [SerializeField] private GameObject level2;
         [SerializeField] private GameObject level3;
+        [SerializeField] private GameObject level4;
         public void StartGame()
         {
             menuLevels.SetActive(true);
@@ -21,10 +22,24 @@ namespace Manager
             {
                 level2.SetActive(false);
                 level3.SetActive(false);
+                level4.SetActive(false);
             }
             else if(PlayerPrefs.GetInt("level", 1) < 3)
             {
-                level2.SetActive(false);
+                level2.SetActive(true);
+                level3.SetActive(false);
+                level4.SetActive(false);
+            }else if (PlayerPrefs.GetInt("level", 1) < 4)
+            {
+                level2.SetActive(true);
+                level3.SetActive(true);
+                level4.SetActive(false);
+            }
+            else
+            {
+                level2.SetActive(true);
+                level3.SetActive(true);
+                level4.SetActive(true);
             }
         }
         
@@ -74,6 +89,10 @@ namespace Manager
         public void Level3()
         {
             SceneManager.LoadScene(3);
+        }
+        public void Level4()
+        {
+            SceneManager.LoadScene(4);
         }
     }
 }

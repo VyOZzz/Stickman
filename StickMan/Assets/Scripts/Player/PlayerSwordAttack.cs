@@ -106,7 +106,7 @@ namespace Player
                     enemyRb.AddForce(knockbackDirection * KBForce, ForceMode2D.Impulse);
                 }
 
-                StartCoroutine(ResetEnemyState(enemySwordAttack));
+                StartCoroutine(ResetCombatantState(enemySwordAttack));
             }
         }
 

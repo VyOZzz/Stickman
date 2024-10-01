@@ -303,7 +303,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 4
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -343,7 +343,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 781f52b45a3a24058a4a2ea4421b8516, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1.5
+  moveSpeed: 1
   _animator: {fileID: 0}
   enemySwordAttack: {fileID: 0}
 --- !u!70 &4779193583498091415
@@ -507,10 +507,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ee2ae3cd1941489db6eab2c9e5eeab4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 40
+  damage: 30
   KBForce: 5
-  newCooldownTime: 1.5
+  newCooldownTime: 3
   isAttacking: 0
+  animationDuration: 0.44
 --- !u!1001 &4567323303763476110
 PrefabInstance:
   m_ObjectHideFlags: 0
