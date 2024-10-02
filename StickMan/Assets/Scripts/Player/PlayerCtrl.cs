@@ -38,7 +38,7 @@ namespace Player
 
         private void Update()
         {
-            if(Input.GetMouseButtonDown(0) && groundChecker.IsGrounded && playerSwordAttack.CanAttack)
+            if(Input.GetMouseButtonDown(0) && groundChecker.IsGrounded )
             {
                 playerSwordAttack.Attack();
             }

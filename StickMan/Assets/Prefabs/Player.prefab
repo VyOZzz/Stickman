@@ -240,11 +240,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 30
+  cooldownTime: 5
   KBForce: 8
-  newCooldownTime: 0.5
   comboStep: 0
   lastTimeAttack: 0
-  comboWindow: 0.75
 --- !u!1 &5403461320659965653
 GameObject:
   m_ObjectHideFlags: 0
@@ -398,11 +397,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
+  cooldownTime: 5
   KBForce: 2
-  newCooldownTime: 0.5
   comboStep: 0
   lastTimeAttack: 0
-  comboWindow: 0.75
 --- !u!1 &6349587264854982418
 GameObject:
   m_ObjectHideFlags: 0
@@ -774,11 +772,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 20
+  cooldownTime: 5
   KBForce: 2
-  newCooldownTime: 0.5
   comboStep: 0
   lastTimeAttack: 0
-  comboWindow: 0.75
 --- !u!1001 &6903884150223826608
 PrefabInstance:
   m_ObjectHideFlags: 0

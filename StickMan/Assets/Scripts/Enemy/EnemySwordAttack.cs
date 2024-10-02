@@ -14,6 +14,7 @@ namespace Enemy
         [SerializeField] private float newCooldownTime;
         [SerializeField] private bool isAttacking = false; // Thêm biến để theo dõi trạng thái tấn công
         [SerializeField] private float animationDuration;
+        private float timeSceneLastAttack;
         public bool CanMove
         {
             get => canMove; 
@@ -76,10 +77,9 @@ namespace Enemy
                 }
             }
             // khôi phục khả năng di chuyển và tấn công của player
-            StartCoroutine(ResetCombatantState(player.PlayerSwordAttack));
+            StartCoroutine(ResetCombatState(player.PlayerSwordAttack));
            
         }
-
         public void StopEnemyAttack()
         {
             isAttacking = false;
@@ -89,19 +89,20 @@ namespace Enemy
         // Coroutine to handle attack animation and cooldown
         private IEnumerator HandleAttackAnimation()
         {
-            
             _animator.SetBool(AnimationStrings.canAttack, true); // Start attack animation
             isAttacking = true; // Mark as attacking
+            timeSceneLastAttack = 0f;  //
             yield return new WaitForSeconds(animationDuration); // Wait for animation duration
             _animator.SetBool(AnimationStrings.canAttack, false); // Stop attack animation
             isAttacking = false; // Reset attack state
             CanAttack = false; // Disable attack temporarily
-            yield return new WaitForSeconds(cooldownTime); // Wait for cooldown
+            while (timeSceneLastAttack < newCooldownTime)
+            {
+                timeSceneLastAttack += Time.deltaTime;
+                yield return null; // nó sẽ bỏ qua frame này và chờ frame tiếp theo và nó lại tiếp tục vòng whiile
+            }
             CanAttack = true; // Re-enable attack
-            
             CanMove = true; // Allow movement after attack
         }
-        
-        
     }
 }

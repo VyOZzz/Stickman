@@ -431,6 +431,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 130
+  isBoss: 0
   enemySwordAttack: {fileID: 332952945723803313}
   detectionZone: {fileID: 3902766948098991763}
   gameManager: {fileID: 7087960895330467979, guid: 0b12a808713e443eb8aac53df44dd77b, type: 3}
@@ -446,7 +447,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 781f52b45a3a24058a4a2ea4421b8516, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0.5
+  moveSpeed: 0.6
   _animator: {fileID: 1460721001116455524}
   enemySwordAttack: {fileID: 332952945723803313}
 --- !u!70 &5819436495235271210

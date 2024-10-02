@@ -17466,7 +17466,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1280993216}
   - component: {fileID: 1280993215}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Left Edge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17636,7 +17636,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1679960010}
   - component: {fileID: 1679960009}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Right Edge
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -18029,10 +18029,22 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4875026138055000897, guid: ed94169d5109a42049b41da14474d2e3, type: 3}
+      propertyPath: cooldownTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5599955657768505465, guid: ed94169d5109a42049b41da14474d2e3, type: 3}
+      propertyPath: HP
+      value: 100000
+      objectReference: {fileID: 0}
     - target: {fileID: 5599955657768505465, guid: ed94169d5109a42049b41da14474d2e3, type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1693671972}
+    - target: {fileID: 7392949388277398118, guid: ed94169d5109a42049b41da14474d2e3, type: 3}
+      propertyPath: cooldownTime
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7505697365286844236, guid: ed94169d5109a42049b41da14474d2e3, type: 3}
       propertyPath: m_Name
       value: Player
@@ -18044,6 +18056,10 @@ PrefabInstance:
     - target: {fileID: 8337307761172781249, guid: ed94169d5109a42049b41da14474d2e3, type: 3}
       propertyPath: damage
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8337307761172781249, guid: ed94169d5109a42049b41da14474d2e3, type: 3}
+      propertyPath: cooldownTime
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18116,6 +18132,7 @@ SceneRoots:
   - {fileID: 1190581890}
   - {fileID: 4130867742492387972}
   - {fileID: 1308043391371919933}
+  - {fileID: 833733368}
   - {fileID: 666189160}
   - {fileID: 2771373326367480601}
   - {fileID: 532874830}
@@ -18125,4 +18142,3 @@ SceneRoots:
   - {fileID: 1137311565}
   - {fileID: 1892287459}
   - {fileID: 612117270}
-  - {fileID: 833733368}

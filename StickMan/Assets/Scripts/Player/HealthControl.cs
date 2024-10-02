@@ -28,16 +28,17 @@ namespace Player
         }
         public void TakeDamage(int damage)
         {
-            Debug.Log(HP);
             HP -= damage;
             heathBar.SetHeath(HP);
             // play audio hurt
+            Debug.Log("set trigger hit");
             animator.SetTrigger(AnimationStrings.hitTrigger);
             _audioManager.PlaySFX("hurt");
             if (HP <= 0)
             {
                 animator.SetBool(AnimationStrings.isDeath, true);
             }
+            
         }
     }
 }

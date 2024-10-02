@@ -7,7 +7,7 @@ namespace Manager
 {
     public class AudioManager : MonoBehaviour
     {
-        [FormerlySerializedAs("sounds")] public Sound[] musicSounds;
+        public Sound[] musicSounds;
         public Sound[] sfxSounds;
         private void Awake()
         {
@@ -28,7 +28,6 @@ namespace Manager
                 s.source.loop = false;
             }
         }
-
         private void Start()
         {
             
@@ -56,10 +55,8 @@ namespace Manager
             Sound s = Array.Find(sfxSounds, sound => sound.name == name);
             if (s == null)
             {
-                Debug.LogWarning("Sound not found: " + name);
                 return;
             }
-            Debug.Log("Playing sound: " + name);
             s.source.Play();
         }
         public void SetVolumeSFX(float value)
