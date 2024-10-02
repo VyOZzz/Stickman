@@ -18,6 +18,9 @@ namespace Player
         [SerializeField] private float lastTimeAttack = 0f;
         private float comboWindow = 2f;
         private bool isCoolingdown = false;
+        public new bool canMove = true;
+        public new bool canAttack = true;
+        
         public bool CanMove
         {
             get => canMove;
@@ -159,6 +162,12 @@ namespace Player
                 animator.SetInteger(AnimationStrings.comboStep, 0);
             }
         }
-       
+        private IEnumerator ResetCombatState(EnemySwordAttack enemySwordAttack)
+        {
+            // stun time equals  0.5f
+            yield return new WaitForSeconds(0.5f);
+            enemySwordAttack.CanMove = true;
+        }
+
     }
 }

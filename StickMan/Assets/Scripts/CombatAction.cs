@@ -10,8 +10,6 @@ public abstract class CombatAction : MonoBehaviour
 {
    [SerializeField] protected int damage = 10;
    protected float cooldownTime = 1f;
-   protected bool canAttack = true;
-   protected bool canMove = true;
    protected Animator animator;
    private void Start()
    {
@@ -19,25 +17,20 @@ public abstract class CombatAction : MonoBehaviour
    }
 
    // sử dụng IEnumerator để cooldown
-   protected virtual IEnumerator AttackCooldown()
-   {
-      canAttack = false;
-      animator.SetBool(AnimationStrings.canAttack, false);
-      yield return new WaitForSeconds(cooldownTime);
-      canAttack = true;
-      animator.SetBool(AnimationStrings.canAttack, true);
-   }
+   // protected virtual IEnumerator AttackCooldown()
+   // {
+   //    canAttack = false;
+   //    animator.SetBool(AnimationStrings.canAttack, false);
+   //    yield return new WaitForSeconds(cooldownTime);
+   //    canAttack = true;
+   //    animator.SetBool(AnimationStrings.canAttack, true);
+   // }
    // cần public vì có thể các script xử lý input có thể sẽ cần gọi attack nên cần public
    public abstract void Attack();
    // cần public để setdamage khi muốn nhặt vật phẩm hay gì đó.
    public void SetDamage(int newDamage)
    {
       damage = newDamage;
-   }
-   protected IEnumerator ResetCombatState(CombatAction combatAction)
-   {
-      yield return new WaitForSeconds(0.5f);
-      combatAction.canMove = true;
    }
    
 }

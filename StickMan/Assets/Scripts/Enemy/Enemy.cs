@@ -1,3 +1,4 @@
+using System.Collections;
 using Manager;
 using UnityEngine;
 
@@ -8,6 +9,8 @@ namespace Enemy
         public int HP;
         private Heathbar heathBar;
         private Animator _animator;
+        private bool isHit = false;
+        [SerializeField] private float hitCooldown  = 0.5f;
         [SerializeField]
         protected bool isBoss;
         private void Start()
@@ -26,7 +29,7 @@ namespace Enemy
         {
             HP -= damage;
             heathBar.SetHeath(HP);
-            _animator.SetTrigger(AnimationStrings.hitTrigger);
+            HitHandle();
             if (HP <= 0)
             {
                 _animator.SetBool(AnimationStrings.isDeath, true);
@@ -35,6 +38,20 @@ namespace Enemy
         protected virtual void Die()
         {
             Destroy(gameObject);
+        }
+        private void HitHandle()
+        {
+            if (!isHit)
+            {
+                isHit = true;
+                _animator.SetTrigger(AnimationStrings.hitTrigger);
+                StartCoroutine(HitCoroutine());
+            }
+        }
+        IEnumerator HitCoroutine()
+        {
+            yield return new WaitForSeconds(hitCooldown);
+            isHit = false;
         }
     }
 }

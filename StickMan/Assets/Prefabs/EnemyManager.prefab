@@ -59,8 +59,8 @@ MonoBehaviour:
   - enemyPrefab:
     - {fileID: 1876727520199027912, guid: 1940b9ae2edc6404d920e4194804d3a8, type: 3}
     - {fileID: 3313689291477764473, guid: cf083bf33d0c34cdcafdbd154e0f55e9, type: 3}
-    totalEnemies: 15
-    enemiesPerWave: 5
+    totalEnemies: 12
+    enemiesPerWave: 4
     numberWave: 3
   - enemyPrefab:
     - {fileID: 4832616985081414468, guid: 20075a46524744aed84fccacfd0f8883, type: 3}

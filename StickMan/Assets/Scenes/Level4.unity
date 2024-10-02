@@ -248,7 +248,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3668034881591923405, guid: f9d4e69976d8946efa50ca1b869d98c5, type: 3}
       propertyPath: levelDatas.Array.data[3].enemiesPerWave
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3668034881591923405, guid: f9d4e69976d8946efa50ca1b869d98c5, type: 3}
       propertyPath: levelDatas.Array.data[3].enemyPrefab.Array.size

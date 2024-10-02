@@ -9,12 +9,14 @@ namespace Enemy
 {
     public class EnemySwordAttack : CombatAction
     {
-        [SerializeField] private float KBForce = 5f;
+        private float KBForce = 5f;
         private Animator _animator;
         [SerializeField] private float newCooldownTime;
         [SerializeField] private bool isAttacking = false; // Thêm biến để theo dõi trạng thái tấn công
         [SerializeField] private float animationDuration;
         private float timeSceneLastAttack;
+        public new bool canMove = true;
+        public new bool canAttack = true;
         public bool CanMove
         {
             get => canMove; 
@@ -64,21 +66,17 @@ namespace Enemy
             if (player != null)
             {
                 player.HealthControl.TakeDamage(damage);
-                Rigidbody2D rb = other.GetComponent<Rigidbody2D>();
-                player.PlayerSwordAttack.CanAttack = false;
-                player.PlayerSwordAttack.CanMove = false;
+                Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
+                //knockback
                 if (rb != null)
                 {
                     // Calculate knockback direction
-                    Vector2 knockbackDirection = (player.transform.position - transform.position).normalized;
-                    knockbackDirection.y = 1;
+                    Vector2 knockbackDirection = (player.transform.position - transform.position);
+                    knockbackDirection.y = 0;
                     // Apply knockback force
                     rb.AddForce(knockbackDirection * KBForce * 1.5f , ForceMode2D.Impulse);
                 }
             }
-            // khôi phục khả năng di chuyển và tấn công của player
-            StartCoroutine(ResetCombatState(player.PlayerSwordAttack));
-           
         }
         public void StopEnemyAttack()
         {

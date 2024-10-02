@@ -135,6 +135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 120
+  hitCooldown: 0.5
   isBoss: 0
   enemySwordAttack: {fileID: 8757274807664077211}
   detectionZone: {fileID: 3031097818308993627}
@@ -422,7 +423,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 20
   KBForce: 5
-  newCooldownTime: 0.5
+  newCooldownTime: 1
   isAttacking: 0
   animationDuration: 0.38
 --- !u!1 &7110974714397899259

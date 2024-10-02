@@ -50,7 +50,6 @@ namespace Player
 
         public void Die()
         {
-            
             Destroy(gameObject);
             gameManager.GameOver();
         }

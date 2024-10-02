@@ -16,11 +16,8 @@ namespace Player
         private float _horInput;
         [SerializeField] private bool isWalk;
         [SerializeField] private bool isRun;
-
         public bool IsWalk => isWalk;
-
         public bool IsRun => isRun;
-        
 // sử dụng reset để chỉ việc reset là sẽ tự gán lại các component
         private void Reset()
         {
@@ -36,23 +33,25 @@ namespace Player
         }
         private void FixedUpdate()
         {
-            if(playerCtrl.PlayerSwordAttack.CanMove == true)
+            if (_animator.GetBool(AnimationStrings.isDeath)) return;
+            
+            if (Input.GetKey(KeyCode.LeftShift) && playerCtrl.GroundChecker.IsGrounded)
             {
-                if (Input.GetKey(KeyCode.LeftShift) && playerCtrl.GroundChecker.IsGrounded)
-                {
-                    isRun = true;
-                    // không thể attack khi chạy
-                    playerCtrl.PlayerSwordAttack.CanAttack = false;
-                    isWalk = false;
-                }
-                else
-                {
-                    // trả lại trạng thái có thể tấn công khi hết run
-                    playerCtrl.PlayerSwordAttack.CanAttack = true;
-                    isRun = false;
-                }
-                WalkHandle();
+                isRun = true;
+                // không thể attack khi chạy
+                playerCtrl.PlayerSwordAttack.CanAttack = false;
+                isWalk = false;
             }
+            else
+            {
+                // trả lại trạng thái có thể tấn công khi  không chạy nữa
+                playerCtrl.PlayerSwordAttack.CanAttack = true;
+                isRun = false;
+            }
+
+            if (!playerCtrl.PlayerSwordAttack.CanMove) return;
+            
+            WalkHandle();
             AnimationMovementHandle();
         }
         private void WalkHandle()
@@ -97,7 +96,7 @@ namespace Player
                 isWalk = false;
             }
         }
-
+        // trạng thái chạy, idle, đi bộ 
         private void AnimationMovementHandle()
         {
             currentSpeed = Mathf.Abs(rb.linearVelocity.x);
@@ -106,7 +105,7 @@ namespace Player
                 _animator.SetBool(AnimationStrings.isWalk, false);
                 _animator.SetBool(AnimationStrings.isIdle, true);
                 _animator.SetBool(AnimationStrings.isRun, false);
-            }else if (currentSpeed > 0 && currentSpeed <= walkSpeed)
+            }else if (currentSpeed > 0 && currentSpeed <= walkSpeed )
             {
                 _animator.SetBool(AnimationStrings.isIdle, false);
                 _animator.SetBool(AnimationStrings.isWalk, true);
