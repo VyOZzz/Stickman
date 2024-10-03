@@ -15,5 +15,6 @@ namespace Manager
         public static string canAttack = "canAttack";
         public static string hitTrigger = "hit";
         public static string canMove = "canMove";
+        public static string canAttack2 = "canAttack2";
     }
 }

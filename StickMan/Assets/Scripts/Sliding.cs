@@ -6,8 +6,6 @@ public class Sliding : MonoBehaviour
 {
     private PlayerCtrl _playerCtrl;
     private Rigidbody2D _rigidbody2D;
-    [SerializeField] private LayerMask wallLayer;
-
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -24,12 +22,5 @@ public class Sliding : MonoBehaviour
         }
     }
 
-    private void OnCollisionStay2D(Collision2D other)
-    {
-    }
-
-    private bool IsTouchingWall()
-    {
-        return Physics2D.OverlapCircle(transform.position, 0.1f, wallLayer);
-    }
+   
 }

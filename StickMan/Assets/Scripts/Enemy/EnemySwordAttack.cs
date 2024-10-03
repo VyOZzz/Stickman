@@ -9,7 +9,7 @@ namespace Enemy
 {
     public class EnemySwordAttack : CombatAction
     {
-        private float KBForce = 5f;
+        private float KBForce = 2f;
         private Animator _animator;
         [SerializeField] private float newCooldownTime;
         [SerializeField] private bool isAttacking = false; // Thêm biến để theo dõi trạng thái tấn công
@@ -17,6 +17,7 @@ namespace Enemy
         private float timeSceneLastAttack;
         public new bool canMove = true;
         public new bool canAttack = true;
+        private Enemy _enemy;
         public bool CanMove
         {
             get => canMove; 
@@ -42,6 +43,7 @@ namespace Enemy
             SetDamage(damage);
             SetCooldownTime(newCooldownTime);
             _animator = GetComponentInParent<Animator>();
+            _enemy = GetComponentInParent<Enemy>();
         }
 
         public override void Attack()
@@ -65,6 +67,7 @@ namespace Enemy
             var player = other.gameObject.GetComponent<PlayerCtrl>();
             if (player != null)
             {
+                Debug.Log("damage: "  + damage);
                 player.HealthControl.TakeDamage(damage);
                 Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
                 //knockback
@@ -87,11 +90,22 @@ namespace Enemy
         // Coroutine to handle attack animation and cooldown
         private IEnumerator HandleAttackAnimation()
         {
-            _animator.SetBool(AnimationStrings.canAttack, true); // Start attack animation
+            if (_enemy.IsHealthUnder40Percent() && _enemy.IsBoss())
+            {
+                _animator.SetBool(AnimationStrings.canAttack2, true); // Start attack animation
+            }
+            else
+                _animator.SetBool(AnimationStrings.canAttack, true); // Start attack animation
+            
             isAttacking = true; // Mark as attacking
             timeSceneLastAttack = 0f;  //
             yield return new WaitForSeconds(animationDuration); // Wait for animation duration
-            _animator.SetBool(AnimationStrings.canAttack, false); // Stop attack animation
+            if (_enemy.IsHealthUnder40Percent() && _enemy.IsBoss())
+            {
+                _animator.SetBool(AnimationStrings.canAttack2, false); // Stop attack animation
+            }
+            else
+                _animator.SetBool(AnimationStrings.canAttack, false); // Stop attack animation
             isAttacking = false; // Reset attack state
             CanAttack = false; // Disable attack temporarily
             while (timeSceneLastAttack < newCooldownTime)

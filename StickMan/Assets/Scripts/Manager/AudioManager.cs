@@ -86,6 +86,13 @@ namespace Manager
                 PlayMusic("Theme2");
             else if( SceneManager.GetActiveScene().buildIndex == 3)
                 PlayMusic("Theme3");
+            else if(SceneManager.GetActiveScene().buildIndex == 4)
+                PlayMusic("Theme4");
+        }
+
+        public void PlaySoundWhenClickButton()
+        {
+            PlaySFX("button");
         }
     }
 }

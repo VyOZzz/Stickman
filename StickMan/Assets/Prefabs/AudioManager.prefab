@@ -124,3 +124,9 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: button
+    clip: {fileID: 8300000, guid: 980bdd2f0b25948e9bfe16c36e13b598, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}

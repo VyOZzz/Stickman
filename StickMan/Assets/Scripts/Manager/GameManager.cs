@@ -43,9 +43,12 @@ namespace Manager
             retryButton.SetActive(true);
             settingButton.SetActive(true);
             pauseButton.SetActive(false);
-            int currentLevel = SceneManager.GetActiveScene().buildIndex;
-            if(PlayerPrefs.GetInt("level", 1) < currentLevel )
-                PlayerPrefs.SetInt("level", currentLevel  );
+            int nextLevel = SceneManager.GetActiveScene().buildIndex  + 1;
+            if(PlayerPrefs.GetInt("level", 1) < nextLevel )
+            {
+                PlayerPrefs.SetInt("level", nextLevel  );
+                Debug.Log("Next level unlocked: " + nextLevel);
+            }
             // scene 4 là scene cuối nên k được hiêjn continue
             if( SceneManager.GetActiveScene().buildIndex != 4 )
                 continueButton.SetActive(true);

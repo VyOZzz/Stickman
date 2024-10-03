@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCtrl: {fileID: 7817412262396208732}
-  jumpForce: 14
+  jumpForce: 13
   rb: {fileID: 0}
 --- !u!70 &6968503599095769744
 CapsuleCollider2D:

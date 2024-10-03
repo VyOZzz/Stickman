@@ -14,13 +14,12 @@ namespace Player
         private PlayerCtrl _playerCtrl;
         [SerializeField] private float KBForce = 5f;
         //private Animator animator;
-        public int comboStep;
+        [HideInInspector] public int comboStep;
         [SerializeField] private float lastTimeAttack = 0f;
-        private float comboWindow = 2f;
+        private float comboWindow = 0.75f;
         private bool isCoolingdown = false;
-        public new bool canMove = true;
-        public new bool canAttack = true;
-        
+        public  bool canMove = true;
+        public  bool canAttack = true;
         public bool CanMove
         {
             get => canMove;
