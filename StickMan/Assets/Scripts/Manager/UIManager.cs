@@ -15,31 +15,18 @@ namespace Manager
         [SerializeField] private GameObject level3;
         [SerializeField] private GameObject level4;
         public void StartGame()
-        {
-            menuLevels.SetActive(true);
-            level1.SetActive(true);
-            if (PlayerPrefs.GetInt("level", 1) < 2)
+        { 
+            if(PlayerPrefs.GetInt("level", 1) == 5)
             {
-                level2.SetActive(false);
-                level3.SetActive(false);
-                level4.SetActive(false);
-            }
-            else if(PlayerPrefs.GetInt("level", 1) < 3)
-            {
-                level2.SetActive(true);
-                level3.SetActive(false);
-                level4.SetActive(false);
-            }else if (PlayerPrefs.GetInt("level", 1) < 4)
-            {
-                level2.SetActive(true);
-                level3.SetActive(true);
-                level4.SetActive(false);
-            }
-            else
-            {
+                menuLevels.SetActive(true);
+                level1.SetActive(true);
                 level2.SetActive(true);
                 level3.SetActive(true);
                 level4.SetActive(true);
+            }
+            else
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
         }
         

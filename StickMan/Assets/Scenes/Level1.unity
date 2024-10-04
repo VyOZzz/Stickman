@@ -18408,10 +18408,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 833733369}
-    - target: {fileID: 4573329476640265323, guid: 53541b4c74b61410f95bd61eacc41b1b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: PlaySoundWhenClickButton
-      objectReference: {fileID: 0}
     - target: {fileID: 5555747483786725474, guid: 53541b4c74b61410f95bd61eacc41b1b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -18420,10 +18416,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 833733369}
-    - target: {fileID: 5555747483786725474, guid: 53541b4c74b61410f95bd61eacc41b1b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: PlaySoundWhenClickButton
-      objectReference: {fileID: 0}
     - target: {fileID: 5607500260498300404, guid: 53541b4c74b61410f95bd61eacc41b1b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -18432,10 +18424,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 833733369}
-    - target: {fileID: 5607500260498300404, guid: 53541b4c74b61410f95bd61eacc41b1b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: PlaySoundWhenClickButton
-      objectReference: {fileID: 0}
     - target: {fileID: 5692008952920487941, guid: 53541b4c74b61410f95bd61eacc41b1b, type: 3}
       propertyPath: m_Name
       value: PopUP
@@ -18452,10 +18440,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 833733369}
-    - target: {fileID: 6267181838901091015, guid: 53541b4c74b61410f95bd61eacc41b1b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: PlaySoundWhenClickButton
-      objectReference: {fileID: 0}
     - target: {fileID: 7960407421406961488, guid: 53541b4c74b61410f95bd61eacc41b1b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -18464,10 +18448,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 833733369}
-    - target: {fileID: 7960407421406961488, guid: 53541b4c74b61410f95bd61eacc41b1b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: PlaySoundWhenClickButton
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

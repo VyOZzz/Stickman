@@ -38,6 +38,7 @@ namespace Player
 
         private void Update()
         {
+            if (playerSwordAttack.IsPointerOverUI()) return;
             if(Input.GetMouseButtonDown(0) && groundChecker.IsGrounded )
             {
                 playerSwordAttack.Attack();

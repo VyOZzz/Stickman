@@ -85,7 +85,7 @@ namespace Manager
         {
             // timescale = 1 tiep tuc thoi gian
             // load lai scene nay
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            SceneManager.LoadScene(1);
         }
 
         public void EnemyDefeated()

@@ -36,7 +36,6 @@ namespace Player
             animator = GetComponentInParent<Animator>();
             _playerCtrl = GetComponentInParent<PlayerCtrl>();
         }
-
         private void Update()
         {
             
@@ -132,18 +131,9 @@ namespace Player
                 }
             }
         }
-        private bool IsPointerOverUI()
+        public bool IsPointerOverUI()
         {
             return EventSystem.current.IsPointerOverGameObject();
-        }
-
-        private void HandleAttackSound()
-        {
-            //audio when attack
-            //điều kiện để khi mà player k thể attack thì k play sound
-            if(!IsPointerOverUI()  // check nếu trỏ vào UI thì sẽ k play sound attack
-               && CanAttack )
-                FindAnyObjectByType<AudioManager>().PlaySFX("slash");
         }
         private IEnumerator StartCooldown()
         {
