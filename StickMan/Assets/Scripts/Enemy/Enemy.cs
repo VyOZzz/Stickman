@@ -55,7 +55,6 @@ namespace Enemy
             yield return new WaitForSeconds(hitCooldown);
             isHit = false;
         }
-
         public bool IsBoss()
         {
             return isBoss;

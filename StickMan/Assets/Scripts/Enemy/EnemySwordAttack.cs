@@ -36,7 +36,7 @@ namespace Enemy
         }
         void SetCooldownTime(float newTimeToCooldown)
         {
-            base.cooldownTime = newTimeToCooldown;
+            base.comboTime = newTimeToCooldown;
         }
         void Start()
         {
@@ -81,12 +81,6 @@ namespace Enemy
                 }
             }
         }
-        public void StopEnemyAttack()
-        {
-            isAttacking = false;
-            canMove = true;
-        }
-
         // Coroutine to handle attack animation and cooldown
         private IEnumerator HandleAttackAnimation()
         {

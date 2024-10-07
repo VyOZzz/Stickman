@@ -8,27 +8,30 @@ namespace Player
     {
         [SerializeField]private PlayerMovement playerMovement;
         [SerializeField]private GroundChecker groundChecker;
-        [SerializeField]private PlayerJump playerJump;
         [FormerlySerializedAs("swordAttack")] [SerializeField] private PlayerSwordAttack playerSwordAttack;
         [FormerlySerializedAs("_animator")] public Animator animator;
         [SerializeField] private HealthControl healthControl;
         [SerializeField] private GameManager gameManager;
+        [SerializeField] private Joystick joystick;
+        [SerializeField] private Dash dash;
+        public Dash Dash => dash;
+        public Joystick Joystick => joystick;
         public PlayerMovement PlayerMovement => playerMovement;
-        public PlayerJump PlayerJump => playerJump;
         public GroundChecker GroundChecker => groundChecker;
         public PlayerSwordAttack PlayerSwordAttack => playerSwordAttack;
         public HealthControl HealthControl => healthControl;
         public GameManager GameManager => gameManager;
         
-    
+        
         private void Reset()
         {
             playerSwordAttack = FindFirstObjectByType<PlayerSwordAttack>();
             playerMovement = FindFirstObjectByType<PlayerMovement>();
             groundChecker = FindFirstObjectByType<GroundChecker>();
-            playerJump = FindFirstObjectByType<PlayerJump>();
             healthControl = FindFirstObjectByType<HealthControl>();
             gameManager = FindFirstObjectByType<GameManager>();
+            joystick = FindFirstObjectByType<Joystick>();
+            dash = FindFirstObjectByType<Dash>();
         }
 
         private void Start()
@@ -39,10 +42,8 @@ namespace Player
         private void Update()
         {
             if (playerSwordAttack.IsPointerOverUI()) return;
-            if(Input.GetMouseButtonDown(0) && groundChecker.IsGrounded )
-            {
-                playerSwordAttack.Attack();
-            }
+            
+            
         }
         public void PlaySlashSound()
         {
@@ -53,6 +54,20 @@ namespace Player
         {
             Destroy(gameObject);
             gameManager.GameOver();
+        }
+
+        public void AttackButton()
+        {
+            if(groundChecker.IsGrounded )
+            {
+                playerSwordAttack.Attack();
+            }
+        }
+
+        public void DashButton()
+        {
+            if(Dash.CanDash)
+                StartCoroutine(dash.DashCoroutine());
         }
     }
 }

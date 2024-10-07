@@ -1,5 +1,6 @@
 using Manager;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
 
 namespace Player
@@ -33,9 +34,9 @@ namespace Player
         }
         private void FixedUpdate()
         {
-            if (_animator.GetBool(AnimationStrings.isDeath)) return;
-            
-            if (Input.GetKey(KeyCode.LeftShift) && playerCtrl.GroundChecker.IsGrounded)
+            if (_animator.GetBool(AnimationStrings.isDeath) || playerCtrl.Dash.IsDashing) return;
+            _horInput = -playerCtrl.Joystick.Horizontal;
+            if (Mathf.Abs(_horInput)> 0.2f && playerCtrl.GroundChecker.IsGrounded)
             {
                 isRun = true;
                 // không thể attack khi chạy
@@ -58,7 +59,7 @@ namespace Player
         {
             currentSpeed = isRun ? runSpeed : walkSpeed;
             // nhận input từ người chơi với các phím như AD hay mũi tên
-            _horInput = Input.GetAxis("Horizontal");
+            
             WalkState();
             // set animation walk
             FlipDirection();

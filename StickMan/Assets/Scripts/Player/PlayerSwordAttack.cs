@@ -16,7 +16,7 @@ namespace Player
         //private Animator animator;
         [HideInInspector] public int comboStep;
         [SerializeField] private float lastTimeAttack = 0f;
-        private float comboWindow = 0.75f;
+        private float comboWindow = 1f;
         private bool isCoolingdown = false;
         public  bool canMove = true;
         public  bool canAttack = true;
@@ -44,12 +44,7 @@ namespace Player
             if (stateInfo.IsName("Attack1") || stateInfo.IsName("Attack2") || stateInfo.IsName("Attack3"))
             {
                 CanMove = false; // Trong khi tấn công thì không cho phép di chuyển
-                if (stateInfo.normalizedTime >= 0.99f) // diều kiện nếu nó hoàn thành animation rồi 
-                { // 0.99 vì aniamtion nó có giao động khi comboattak
-                        // comboStep = 0; // Reset comboStep khi hoạt ảnh hoàn thành
-                        // animator.SetInteger(AnimationStrings.comboStep, 0); // Reset animation state
-                        StartCoroutine(StartCooldown());
-                }
+                
             }
             else
             {
@@ -59,7 +54,6 @@ namespace Player
             {
                 comboStep = 0;
                 animator.SetInteger(AnimationStrings.comboStep, comboStep);
-                
             }
         }
         public override void Attack()
@@ -92,8 +86,6 @@ namespace Player
                 EnemySwordAttack enemySwordAttack = other.GetComponentInChildren<EnemySwordAttack>();
                 if (enemyRb != null && enemySwordAttack != null)
                 {
-                    // make enemy cannot attack when be attacked
-                    enemySwordAttack.StopEnemyAttack();
                     // Calculate knockback direction
                     Vector2 knockbackDirection = (enemy.transform.position - transform.position).normalized;
                     knockbackDirection.y = 1;
@@ -123,34 +115,18 @@ namespace Player
                 animator.SetInteger(AnimationStrings.comboStep, 3);
                 comboStep = 3;
             }else if (comboStep == 3)
-            { // Không cho phép combo tiếp tục nếu đã đạt bước thứ 3
-                if (Time.time - lastTimeAttack >= base.cooldownTime) // Kiểm tra cooldown
-                {
-                    comboStep = 0; // Reset combo sau khi cooldown xong
-                    animator.SetInteger(AnimationStrings.comboStep, 0); // Đặt lại animation
-                }
+            {
+                // Không cho phép combo tiếp tục nếu đã đạt bước thứ 3
+                comboStep = 0; // Reset combo sau khi cooldown xong
+                animator.SetInteger(AnimationStrings.comboStep, 0); // Đặt lại animation
             }
         }
         public bool IsPointerOverUI()
         {
             return EventSystem.current.IsPointerOverGameObject();
         }
-        private IEnumerator StartCooldown()
-        {
-            if (!isCoolingdown)
-            {
-                Debug.Log("iscoolingdown");
-                isCoolingdown = true;
-                canAttack = false;
-                animator.SetBool(AnimationStrings.canAttack, false);
-                yield return new WaitForSeconds(cooldownTime); // chờ cooldown
-                isCoolingdown = false;
-                canAttack = true;
-                animator.SetBool(AnimationStrings.canAttack, canAttack);
-                comboStep = 0; // Reset combo after cooldown
-                animator.SetInteger(AnimationStrings.comboStep, 0);
-            }
-        }
+        
+     
         private IEnumerator ResetCombatState(EnemySwordAttack enemySwordAttack)
         {
             // stun time equals  0.5f

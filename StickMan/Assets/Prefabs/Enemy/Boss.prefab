@@ -510,7 +510,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 30
-  newCooldownTime: 4
+  newCooldownTime: 2
   isAttacking: 0
   animationDuration: 1
   canMove: 1
@@ -561,7 +561,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 60
-  newCooldownTime: 5
+  newCooldownTime: 3
   isAttacking: 0
   animationDuration: 0.5
   canMove: 1

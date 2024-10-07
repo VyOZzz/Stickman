@@ -1,4 +1,5 @@
 using System.Collections;
+using Player;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
@@ -140,7 +141,5 @@ namespace Manager
             yield return new WaitForSeconds(2);
             Victory();
         }
-        // ReSharper disable Unity.PerformanceAnalysis
-        
     }
 }
