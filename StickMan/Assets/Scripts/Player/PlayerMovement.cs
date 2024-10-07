@@ -35,7 +35,15 @@ namespace Player
         private void FixedUpdate()
         {
             if (_animator.GetBool(AnimationStrings.isDeath) || playerCtrl.Dash.IsDashing) return;
-            _horInput = -playerCtrl.Joystick.Horizontal;
+#if UNITY_ANDROID
+            
+            _horInput = playerCtrl.Joystick.Horizontal;
+#endif
+#if UNITY_WINDOWS || UNITY_EDITOR
+            {
+                _horInput = Input.GetAxis("Horizontal");
+            }
+#endif
             if (Mathf.Abs(_horInput)> 0.2f && playerCtrl.GroundChecker.IsGrounded)
             {
                 isRun = true;
@@ -58,13 +66,19 @@ namespace Player
         private void WalkHandle()
         {
             currentSpeed = isRun ? runSpeed : walkSpeed;
-            // nhận input từ người chơi với các phím như AD hay mũi tên
-            
-            WalkState();
-            // set animation walk
-            FlipDirection();
             // di chuyển
-            rb.linearVelocity = new Vector2(_horInput * currentSpeed , rb.linearVelocity.y);
+            if (!float.IsNaN(_horInput))
+            {
+                // set animation walk
+                WalkState();
+                
+                FlipDirection();
+                rb.linearVelocity = new Vector2(_horInput * currentSpeed, rb.linearVelocity.y);
+            }
+            else
+            {
+                Debug.LogError("Invalid horizontal input detected! _horInput is NaN.");
+            }
         }
         private void FlipDirection()
         {

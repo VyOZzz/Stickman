@@ -43,7 +43,12 @@ namespace Player
         {
             if (playerSwordAttack.IsPointerOverUI()) return;
             
-            
+            if(groundChecker.IsGrounded && Input.GetMouseButtonDown(0))
+            {
+                playerSwordAttack.Attack();
+            }
+            if(Dash.CanDash && Input.GetKeyDown(KeyCode.LeftShift))
+                StartCoroutine(dash.DashCoroutine());
         }
         public void PlaySlashSound()
         {
@@ -58,16 +63,20 @@ namespace Player
 
         public void AttackButton()
         {
+#if UNITY_ANDROID
             if(groundChecker.IsGrounded )
             {
                 playerSwordAttack.Attack();
             }
+#endif
         }
 
         public void DashButton()
         {
-            if(Dash.CanDash)
+#if UNITY_ANDROID
+            if(Dash.CanDash )
                 StartCoroutine(dash.DashCoroutine());
+#endif
         }
     }
 }
