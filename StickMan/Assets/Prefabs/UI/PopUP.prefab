@@ -124,25 +124,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: SettingPanel
       objectReference: {fileID: 0}
+    - target: {fileID: 3084929099478555301, guid: db58aec1b5feb42c4a93b47add096eae, type: 3}
+      propertyPath: m_TagString
+      value: Button
+      objectReference: {fileID: 0}
     - target: {fileID: 4058241062912179525, guid: db58aec1b5feb42c4a93b47add096eae, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4058241062912179525, guid: db58aec1b5feb42c4a93b47add096eae, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PlaySoundWhenClickButton
-      objectReference: {fileID: 0}
-    - target: {fileID: 4058241062912179525, guid: db58aec1b5feb42c4a93b47add096eae, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: QuitSetting
       objectReference: {fileID: 0}
     - target: {fileID: 4058241062912179525, guid: db58aec1b5feb42c4a93b47add096eae, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlaySoundWhenClickButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 4058241062912179525, guid: db58aec1b5feb42c4a93b47add096eae, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Manager.AudioManager, Assembly-CSharp
+      value: Manager.GameManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4058241062912179525, guid: db58aec1b5feb42c4a93b47add096eae, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: Manager.GameManager, Assembly-CSharp
+      value: Manager.AudioManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4363377581757556537, guid: db58aec1b5feb42c4a93b47add096eae, type: 3}
       propertyPath: m_Pivot.x
@@ -224,6 +228,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7789991011021034481, guid: db58aec1b5feb42c4a93b47add096eae, type: 3}
+      propertyPath: m_TagString
+      value: Button
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -245,7 +253,7 @@ PrefabInstance:
     - target: {fileID: 98998965917911815, guid: fbabfbe8fc7344d5fa659ada0d6359f6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 7817412262396208732, guid: ed94169d5109a42049b41da14474d2e3, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 98998965917911815, guid: fbabfbe8fc7344d5fa659ada0d6359f6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: DashButton
@@ -253,6 +261,10 @@ PrefabInstance:
     - target: {fileID: 1898544111499730204, guid: fbabfbe8fc7344d5fa659ada0d6359f6, type: 3}
       propertyPath: m_Name
       value: DashButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 1898544111499730204, guid: fbabfbe8fc7344d5fa659ada0d6359f6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4688641816229872121, guid: fbabfbe8fc7344d5fa659ada0d6359f6, type: 3}
       propertyPath: m_Pivot.x
@@ -356,10 +368,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Home
       objectReference: {fileID: 0}
-    - target: {fileID: 4479358060640950868, guid: 3ed42bbcad517447a8f1393c936bd6f6, type: 3}
-      propertyPath: m_fontSize
-      value: 72
-      objectReference: {fileID: 0}
     - target: {fileID: 6183020890178973731, guid: 3ed42bbcad517447a8f1393c936bd6f6, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -441,16 +449,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8464822571532772533, guid: 3ed42bbcad517447a8f1393c936bd6f6, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8464822571532772533, guid: 3ed42bbcad517447a8f1393c936bd6f6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PlaySoundWhenClickButton
+      value: Home
       objectReference: {fileID: 0}
     - target: {fileID: 8464822571532772533, guid: 3ed42bbcad517447a8f1393c936bd6f6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: Home
+      value: PlaySoundWhenClickButton
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -471,16 +475,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 1305933650803913116}
     m_Modifications:
     - target: {fileID: 3252990960358280466, guid: 49c23b9522eb94b3bb259734f50dd2f1, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3252990960358280466, guid: 49c23b9522eb94b3bb259734f50dd2f1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PlaySoundWhenClickButton
+      value: Retry
       objectReference: {fileID: 0}
     - target: {fileID: 3252990960358280466, guid: 49c23b9522eb94b3bb259734f50dd2f1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: Retry
+      value: PlaySoundWhenClickButton
       objectReference: {fileID: 0}
     - target: {fileID: 4886692081813500647, guid: 49c23b9522eb94b3bb259734f50dd2f1, type: 3}
       propertyPath: m_Pivot.x
@@ -561,10 +561,6 @@ PrefabInstance:
     - target: {fileID: 4886692081813500647, guid: 49c23b9522eb94b3bb259734f50dd2f1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5497865885045093129, guid: 49c23b9522eb94b3bb259734f50dd2f1, type: 3}
-      propertyPath: m_fontSize
-      value: 72
       objectReference: {fileID: 0}
     - target: {fileID: 6354389263486545435, guid: 49c23b9522eb94b3bb259734f50dd2f1, type: 3}
       propertyPath: m_Name
@@ -670,11 +666,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8170153791668043269, guid: 0d230cc8be529a542a08cb878ab14b18, type: 3}
       propertyPath: m_Name
-      value: Floating Joystick
+      value: Joystick
       objectReference: {fileID: 0}
     - target: {fileID: 8170153791668043269, guid: 0d230cc8be529a542a08cb878ab14b18, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -904,6 +900,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5355041973429922069, guid: 6a50d309751e24f42a04e0355ac04bcf, type: 3}
+      propertyPath: m_TagString
+      value: Button
+      objectReference: {fileID: 0}
     - target: {fileID: 7242890375057074244, guid: 6a50d309751e24f42a04e0355ac04bcf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -936,19 +936,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3780843522219977052, guid: 5ea943990e2944b43bcc5f8f2dde46cc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PlaySoundWhenClickButton
-      objectReference: {fileID: 0}
-    - target: {fileID: 3780843522219977052, guid: 5ea943990e2944b43bcc5f8f2dde46cc, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: Continue
       objectReference: {fileID: 0}
     - target: {fileID: 3780843522219977052, guid: 5ea943990e2944b43bcc5f8f2dde46cc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlaySoundWhenClickButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 3780843522219977052, guid: 5ea943990e2944b43bcc5f8f2dde46cc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Manager.AudioManager, Assembly-CSharp
+      value: Manager.GameManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3780843522219977052, guid: 5ea943990e2944b43bcc5f8f2dde46cc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: Manager.GameManager, Assembly-CSharp
+      value: Manager.AudioManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4738875910690054190, guid: 5ea943990e2944b43bcc5f8f2dde46cc, type: 3}
       propertyPath: m_Pivot.x
@@ -1033,6 +1033,10 @@ PrefabInstance:
     - target: {fileID: 5209111367435642804, guid: 5ea943990e2944b43bcc5f8f2dde46cc, type: 3}
       propertyPath: m_Name
       value: Continue
+      objectReference: {fileID: 0}
+    - target: {fileID: 5209111367435642804, guid: 5ea943990e2944b43bcc5f8f2dde46cc, type: 3}
+      propertyPath: m_TagString
+      value: Button
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1169,7 +1173,7 @@ PrefabInstance:
     - target: {fileID: 3225884599583547070, guid: 78c11dd423ba7472dbd938db179c4dfe, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 7817412262396208732, guid: ed94169d5109a42049b41da14474d2e3, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 3225884599583547070, guid: 78c11dd423ba7472dbd938db179c4dfe, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: AttackButton
@@ -1177,6 +1181,10 @@ PrefabInstance:
     - target: {fileID: 7030260747123356502, guid: 78c11dd423ba7472dbd938db179c4dfe, type: 3}
       propertyPath: m_Name
       value: AttackButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 7030260747123356502, guid: 78c11dd423ba7472dbd938db179c4dfe, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8387422009758867337, guid: 78c11dd423ba7472dbd938db179c4dfe, type: 3}
       propertyPath: m_Pivot.x
@@ -1362,23 +1370,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2847927818920804196, guid: b4f70c5ae782f443a82d06c42ceaea1c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PlaySoundWhenClickButton
-      objectReference: {fileID: 0}
-    - target: {fileID: 2847927818920804196, guid: b4f70c5ae782f443a82d06c42ceaea1c, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: Setting
       objectReference: {fileID: 0}
     - target: {fileID: 2847927818920804196, guid: b4f70c5ae782f443a82d06c42ceaea1c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlaySoundWhenClickButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 2847927818920804196, guid: b4f70c5ae782f443a82d06c42ceaea1c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Manager.AudioManager, Assembly-CSharp
+      value: Manager.GameManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2847927818920804196, guid: b4f70c5ae782f443a82d06c42ceaea1c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: Manager.GameManager, Assembly-CSharp
+      value: Manager.AudioManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4921658690214542420, guid: b4f70c5ae782f443a82d06c42ceaea1c, type: 3}
       propertyPath: m_Name
       value: Setting
+      objectReference: {fileID: 0}
+    - target: {fileID: 4921658690214542420, guid: b4f70c5ae782f443a82d06c42ceaea1c, type: 3}
+      propertyPath: m_TagString
+      value: Button
       objectReference: {fileID: 0}
     - target: {fileID: 8875347160405107592, guid: b4f70c5ae782f443a82d06c42ceaea1c, type: 3}
       propertyPath: m_fontSize

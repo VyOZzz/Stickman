@@ -121,9 +121,6 @@ namespace Player
                 animator.SetInteger(AnimationStrings.comboStep, 0); // Đặt lại animation
             }
         }
-        
-        
-     
         private IEnumerator ResetCombatState(EnemySwordAttack enemySwordAttack)
         {
             // stun time equals  0.5f

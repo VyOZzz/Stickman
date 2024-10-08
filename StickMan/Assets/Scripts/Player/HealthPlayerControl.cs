@@ -5,7 +5,7 @@ using UnityEngine.Serialization;
 
 namespace Player
 {
-    public class HealthControl : MonoBehaviour
+    public class HealthPlayerControl : MonoBehaviour
     {
         [SerializeField] private PlayerCtrl playerCtrl;
         [SerializeField] private int HP = 100;
@@ -25,7 +25,6 @@ namespace Player
         }
         private void Start()
         {
-            heathBar = FindFirstObjectByType<Heathbar>();
             heathBar.SetMaxHeath(HP);
             animator = GetComponentInParent<Animator>();
             _audioManager = FindFirstObjectByType<AudioManager>();

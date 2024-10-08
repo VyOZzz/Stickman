@@ -47,7 +47,7 @@ MonoBehaviour:
   _rigidbody2D: {fileID: 3302674664683183204}
   spriteRenderer: {fileID: 0}
   dashingCooldown: 5
-  dashingPower: 20
+  dashingPower: 15
   _trailRenderer: {fileID: 6785068562524398312}
   dashBar: {fileID: 5450734443130459522}
 --- !u!1 &2444216820805955308
@@ -414,7 +414,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCtrl: {fileID: 7817412262396208732}
   HP: 100
-  heathBar: {fileID: 0}
+  heathBar: {fileID: 8709018903095772229}
   gameManager: {fileID: 0}
   animator: {fileID: 2770793296492137475}
 --- !u!1 &7505697365286844236
@@ -478,12 +478,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerMovement: {fileID: 7846875992764447834}
   groundChecker: {fileID: 6495544390812781594}
-  playerSwordAttack: {fileID: 4875026138055000897}
+  playerSwordAttack: {fileID: 7392949388277398118}
   animator: {fileID: 0}
-  healthControl: {fileID: 5599955657768505465}
+  healthPlayerControl: {fileID: 5599955657768505465}
   gameManager: {fileID: 0}
   joystick: {fileID: 0}
   dash: {fileID: 3745245183292295935}
+  mobileTouchController: {fileID: 0}
 --- !u!212 &6206857807462348459
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1002,5 +1003,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8008af90a8b774110be9227e509d35ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8709018903095772229 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2815629937533643509, guid: 15739624908a843b88508a1414a1878c, type: 3}
+  m_PrefabInstance: {fileID: 6903884150223826608}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 130a096ea086a4b39927623d02b33a79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

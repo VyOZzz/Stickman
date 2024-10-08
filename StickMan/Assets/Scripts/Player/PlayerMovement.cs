@@ -38,10 +38,12 @@ namespace Player
             if (_animator.GetBool(AnimationStrings.isDeath) || playerCtrl.Dash.IsDashing) return;
 
 #if UNITY_ANDROID
-    if (playerCtrl.Joystick != null)
-        _horInput = playerCtrl.Joystick.Horizontal;
-    else
-        _horInput = 0;
+            Debug.Log(playerCtrl.MobileTouchController.IsPointerOverNonActionButton());
+            if (playerCtrl.MobileTouchController.IsPointerOverNonActionButton()) return; 
+            if (playerCtrl.Joystick != null)
+                _horInput = playerCtrl.Joystick.Horizontal;
+            else
+                _horInput = 0;
 #elif UNITY_STANDALONE || UNITY_EDITOR
             _horInput = Input.GetAxis("Horizontal");
 #endif

@@ -11,16 +11,18 @@ namespace Player
         [SerializeField]private GroundChecker groundChecker;
         [FormerlySerializedAs("swordAttack")] [SerializeField] private PlayerSwordAttack playerSwordAttack;
         [FormerlySerializedAs("_animator")] public Animator animator;
-        [SerializeField] private HealthControl healthControl;
+        [FormerlySerializedAs("healthControl")] [SerializeField] private HealthPlayerControl healthPlayerControl;
         [SerializeField] private GameManager gameManager;
         [SerializeField] private Joystick joystick;
         [SerializeField] private Dash dash;
+        [SerializeField] private MobileTouchController mobileTouchController;
+        public MobileTouchController MobileTouchController => mobileTouchController;
         public Dash Dash => dash;
         public Joystick Joystick => joystick;
         public PlayerMovement PlayerMovement => playerMovement;
         public GroundChecker GroundChecker => groundChecker;
         public PlayerSwordAttack PlayerSwordAttack => playerSwordAttack;
-        public HealthControl HealthControl => healthControl;
+        public HealthPlayerControl HealthPlayerControl => healthPlayerControl;
         public GameManager GameManager => gameManager;
         
         
@@ -29,10 +31,11 @@ namespace Player
             playerSwordAttack = FindFirstObjectByType<PlayerSwordAttack>();
             playerMovement = FindFirstObjectByType<PlayerMovement>();
             groundChecker = FindFirstObjectByType<GroundChecker>();
-            healthControl = FindFirstObjectByType<HealthControl>();
+            healthPlayerControl = FindFirstObjectByType<HealthPlayerControl>();
             gameManager = FindFirstObjectByType<GameManager>();
             joystick = FindFirstObjectByType<Joystick>();
             dash = FindFirstObjectByType<Dash>();
+            mobileTouchController = FindAnyObjectByType<MobileTouchController>();
         }
 
         private void Start()

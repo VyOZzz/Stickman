@@ -67,7 +67,7 @@ namespace Enemy
             if (player != null)
             {
                 Debug.Log("damage: "  + damage);
-                player.HealthControl.TakeDamage(damage);
+                player.HealthPlayerControl.TakeDamage(damage);
                 Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
                 //knockback
                 if (rb != null)
