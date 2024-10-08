@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -11,11 +12,12 @@ namespace Player
         [SerializeField]private Rigidbody2D _rigidbody2D;
         [SerializeField] private SpriteRenderer spriteRenderer;
         [FormerlySerializedAs("dashCooldownTime")] [SerializeField] private float dashingCooldown = 5f;
+        private float dashTimer = 5f;
         [FormerlySerializedAs("dashForce")] [SerializeField]private float dashingPower = 2000f;
         private float dashingTime = 0.2f;
         private bool canDash = true;
         [SerializeField] private TrailRenderer _trailRenderer;
-
+        [SerializeField] private DashBar dashBar;
         public bool IsDashing
         {
             get => isDashing;
@@ -31,6 +33,8 @@ namespace Player
         }
         void Start()
         {
+            dashBar = FindFirstObjectByType<DashBar>();
+            dashBar.SetMaxDashBar(dashingCooldown);
             spriteRenderer = GetComponent<SpriteRenderer>();
             // xét detect của 2 layer khi start game
             Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Enemy"), false);
@@ -49,6 +53,9 @@ namespace Player
             _rigidbody2D.linearVelocity = new Vector2(dashingPower * transform.parent.localScale.x, 0f);
             _trailRenderer.emitting = true;
             yield return new WaitForSeconds(dashingTime);
+            //sét dashTimer vể 0 
+            // set dashbar về 0 và tắt trail
+            dashBar.SetDashBar(0);
             _trailRenderer.emitting = false;
             // bật lại detect va chạm với 2 layer này
             Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Enemy"), false);
@@ -57,6 +64,8 @@ namespace Player
             isDashing = false;
             // cooldown
             yield return new WaitForSeconds(dashingCooldown);
+            dashTimer = dashingCooldown;
+            dashBar.SetDashBar(dashingCooldown);
             canDash = true;
         }
     }

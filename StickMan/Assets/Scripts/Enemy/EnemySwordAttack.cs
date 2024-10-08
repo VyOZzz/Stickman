@@ -3,7 +3,6 @@ using System.Collections;
 using Manager;
 using Player;
 using UnityEngine;
-using UnityEngine.Rendering.VirtualTexturing;
 
 namespace Enemy
 {

@@ -121,10 +121,7 @@ namespace Player
                 animator.SetInteger(AnimationStrings.comboStep, 0); // Đặt lại animation
             }
         }
-        public bool IsPointerOverUI()
-        {
-            return EventSystem.current.IsPointerOverGameObject();
-        }
+        
         
      
         private IEnumerator ResetCombatState(EnemySwordAttack enemySwordAttack)

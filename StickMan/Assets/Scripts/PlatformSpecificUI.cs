@@ -12,17 +12,15 @@ public class PlatformSpecificUI : MonoBehaviour
     void Start()
     {
 #if UNITY_ANDROID
-using UnityEngine.Android;
 // Nếu chạy trên Android thì hiển thị joystick và các button cần thiết
             joystick.SetActive(true);
             attackButton.SetActive(true);
             dashButton.SetActive(true);
 #endif
-#if UNITY_EDITOR        
+#if  UNITY_WINDOWS
             joystick.SetActive(false);
             attackButton.SetActive(false);
             dashButton.SetActive(false);
 #endif
-        
     }
 }

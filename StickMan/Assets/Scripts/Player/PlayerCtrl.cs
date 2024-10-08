@@ -1,5 +1,6 @@
 using Manager;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.Serialization;
 
 namespace Player
@@ -41,14 +42,15 @@ namespace Player
 
         private void Update()
         {
-            if (playerSwordAttack.IsPointerOverUI()) return;
-            
+            if (IsPointerOverUI()) return;
+#if  UNITY_WINDOWS
             if(groundChecker.IsGrounded && Input.GetMouseButtonDown(0))
             {
                 playerSwordAttack.Attack();
             }
             if(Dash.CanDash && Input.GetKeyDown(KeyCode.LeftShift))
                 StartCoroutine(dash.DashCoroutine());
+#endif
         }
         public void PlaySlashSound()
         {
@@ -77,6 +79,10 @@ namespace Player
             if(Dash.CanDash )
                 StartCoroutine(dash.DashCoroutine());
 #endif
+        }
+        public bool IsPointerOverUI()
+        {
+            return EventSystem.current.IsPointerOverGameObject();
         }
     }
 }

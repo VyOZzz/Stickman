@@ -25,6 +25,7 @@ namespace Player
         }
         private void Start()
         {
+            heathBar = FindFirstObjectByType<Heathbar>();
             heathBar.SetMaxHeath(HP);
             animator = GetComponentInParent<Animator>();
             _audioManager = FindFirstObjectByType<AudioManager>();

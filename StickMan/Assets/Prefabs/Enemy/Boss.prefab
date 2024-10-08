@@ -328,7 +328,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca4a938abf5ee4941a4a26b00b3d0086, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 500
+  HP: 800
   hitCooldown: 0.5
   isBoss: 1
   enemySwordAttack: {fileID: 1198545445346535064}
@@ -510,7 +510,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 30
-  newCooldownTime: 2
+  newCooldownTime: 5
   isAttacking: 0
   animationDuration: 1
   canMove: 1
@@ -561,7 +561,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 60
-  newCooldownTime: 3
+  newCooldownTime: 7
   isAttacking: 0
   animationDuration: 0.5
   canMove: 1
@@ -668,18 +668,6 @@ PrefabInstance:
       value: 21.29132
       objectReference: {fileID: 0}
     - target: {fileID: 2601160039458838248, guid: 17a7584a76c1d44eaacede7bdeffcb9c, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.49
-      objectReference: {fileID: 0}
-    - target: {fileID: 2601160039458838248, guid: 17a7584a76c1d44eaacede7bdeffcb9c, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.49
-      objectReference: {fileID: 0}
-    - target: {fileID: 2601160039458838248, guid: 17a7584a76c1d44eaacede7bdeffcb9c, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.49
-      objectReference: {fileID: 0}
-    - target: {fileID: 2601160039458838248, guid: 17a7584a76c1d44eaacede7bdeffcb9c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -727,15 +715,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2601160039458838248, guid: 17a7584a76c1d44eaacede7bdeffcb9c, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8638245641854321561, guid: 17a7584a76c1d44eaacede7bdeffcb9c, type: 3}
       propertyPath: m_Name
       value: HeathBar
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4638937120788266196, guid: 17a7584a76c1d44eaacede7bdeffcb9c, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

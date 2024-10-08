@@ -34,12 +34,13 @@ namespace Player
         }
         private void FixedUpdate()
         {
+            if (Time.timeScale == 0) return;
             if (_animator.GetBool(AnimationStrings.isDeath) || playerCtrl.Dash.IsDashing) return;
-#if UNITY_ANDROID
+#if UNITY_ANDROID 
             
             _horInput = playerCtrl.Joystick.Horizontal;
 #endif
-#if UNITY_WINDOWS || UNITY_EDITOR
+#if UNITY_WINDOWS 
             {
                 _horInput = Input.GetAxis("Horizontal");
             }

@@ -44,9 +44,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a13425f5c3f74bf2b1d873de95c6c0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyManager: {fileID: 0}
-  gameOverText: {fileID: 0}
-  victoryText: {fileID: 0}
-  homeButton: {fileID: 0}
-  continueButton: {fileID: 0}
-  retryButton: {fileID: 0}
+  enemyManager: {fileID: 3668034881591923405, guid: f9d4e69976d8946efa50ca1b869d98c5, type: 3}
+  gameOverText: {fileID: 6599567706375349886, guid: 97510c5bdd0ee48758f6b83830a538ab, type: 3}
+  victoryText: {fileID: 5430340905691296122, guid: b1cc15b16739c445e991f3ba150600ff, type: 3}
+  homeButton: {fileID: 4176111156902629651, guid: 3ed42bbcad517447a8f1393c936bd6f6, type: 3}
+  continueButton: {fileID: 5209111367435642804, guid: 5ea943990e2944b43bcc5f8f2dde46cc, type: 3}
+  retryButton: {fileID: 6354389263486545435, guid: 49c23b9522eb94b3bb259734f50dd2f1, type: 3}
+  settingPopUp: {fileID: 3084929099478555301, guid: db58aec1b5feb42c4a93b47add096eae, type: 3}
+  settingButton: {fileID: 4921658690214542420, guid: b4f70c5ae782f443a82d06c42ceaea1c, type: 3}
+  pauseButton: {fileID: 5355041973429922069, guid: 6a50d309751e24f42a04e0355ac04bcf, type: 3}
