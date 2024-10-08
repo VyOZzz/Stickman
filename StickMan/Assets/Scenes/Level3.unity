@@ -18751,7 +18751,7 @@ PrefabInstance:
     - target: {fileID: 5599955657768505465, guid: ed94169d5109a42049b41da14474d2e3, type: 3}
       propertyPath: heathBar
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2771373326367480602}
     - target: {fileID: 5599955657768505465, guid: ed94169d5109a42049b41da14474d2e3, type: 3}
       propertyPath: gameManager
       value: 
@@ -18781,6 +18781,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed94169d5109a42049b41da14474d2e3, type: 3}
+--- !u!114 &2771373326367480602 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8709018903095772229, guid: ed94169d5109a42049b41da14474d2e3, type: 3}
+  m_PrefabInstance: {fileID: 2771373326367480601}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 130a096ea086a4b39927623d02b33a79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2771373326367480603 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7817412262396208732, guid: ed94169d5109a42049b41da14474d2e3, type: 3}

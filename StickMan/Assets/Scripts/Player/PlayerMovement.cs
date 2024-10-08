@@ -36,31 +36,30 @@ namespace Player
         {
             if (Time.timeScale == 0) return;
             if (_animator.GetBool(AnimationStrings.isDeath) || playerCtrl.Dash.IsDashing) return;
-#if UNITY_ANDROID 
-            
-            _horInput = playerCtrl.Joystick.Horizontal;
+
+#if UNITY_ANDROID
+    if (playerCtrl.Joystick != null)
+        _horInput = playerCtrl.Joystick.Horizontal;
+    else
+        _horInput = 0;
+#elif UNITY_STANDALONE || UNITY_EDITOR
+            _horInput = Input.GetAxis("Horizontal");
 #endif
-#if UNITY_WINDOWS 
-            {
-                _horInput = Input.GetAxis("Horizontal");
-            }
-#endif
-            if (Mathf.Abs(_horInput)> 0.2f && playerCtrl.GroundChecker.IsGrounded)
+
+            if (Mathf.Abs(_horInput) > 0.2f && playerCtrl.GroundChecker.IsGrounded)
             {
                 isRun = true;
-                // không thể attack khi chạy
                 playerCtrl.PlayerSwordAttack.CanAttack = false;
                 isWalk = false;
             }
             else
             {
-                // trả lại trạng thái có thể tấn công khi  không chạy nữa
                 playerCtrl.PlayerSwordAttack.CanAttack = true;
                 isRun = false;
             }
 
             if (!playerCtrl.PlayerSwordAttack.CanMove) return;
-            
+
             WalkHandle();
             AnimationMovementHandle();
         }

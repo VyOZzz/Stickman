@@ -17,8 +17,10 @@ namespace Manager
         [SerializeField] private GameObject settingPopUp;
         [SerializeField] private GameObject settingButton;
         [SerializeField] private GameObject pauseButton;
+        private GameObject joystick;
         private void Awake()
         {
+            joystick = FindFirstObjectByType<PlayerCtrl>().Joystick.gameObject;
             // set active false
             victoryText.SetActive(false);
             gameOverText.SetActive(false);
@@ -39,6 +41,7 @@ namespace Manager
         private void Victory()
         {
             Time.timeScale = 0;
+            joystick.SetActive(false);
             victoryText.SetActive(true);
             homeButton.SetActive(true);
             retryButton.SetActive(true);
@@ -62,6 +65,8 @@ namespace Manager
         {
             Time.timeScale = 0;
             FindFirstObjectByType<AudioManager>().PlaySFX("youlose");
+            // 
+            joystick.SetActive(false);
             gameOverText.SetActive(true);
             homeButton.SetActive(true);
             retryButton.SetActive(true);
@@ -103,6 +108,7 @@ namespace Manager
             {
                 FindFirstObjectByType<AudioManager>().PlaySFX("unpause");
                 Time.timeScale = 1;
+                joystick.SetActive(true);
                 homeButton.SetActive(false);
                 retryButton.SetActive(false);
                 continueButton.SetActive(false);
@@ -112,6 +118,7 @@ namespace Manager
             {
                 FindFirstObjectByType<AudioManager>().PlaySFX("pause");
                 Time.timeScale = 0;
+                joystick.SetActive(false);
                 homeButton.SetActive(true);
                 retryButton.SetActive(true);
                 continueButton.SetActive(false);
@@ -127,6 +134,7 @@ namespace Manager
         public void Setting()
         {
             settingPopUp.SetActive(true);
+            joystick.SetActive(false);
             // homeButton.SetActive(false);
             // retryButton.SetActive(false);
             // continueButton.SetActive(false);

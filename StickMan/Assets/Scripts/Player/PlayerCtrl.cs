@@ -1,8 +1,8 @@
 using Manager;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.Serialization;
-
+using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 namespace Player
 {
     public class PlayerCtrl : MonoBehaviour
@@ -38,12 +38,18 @@ namespace Player
         private void Start()
         {
             animator = GetComponent<Animator>();
+#if UNITY_ANDROID
+    joystick.gameObject.SetActive(true);
+    Debug.Log("Joystick enabled for Android.");
+#else
+            joystick.gameObject.SetActive(false);
+            Debug.Log("Joystick disabled for non-Android platforms.");
+#endif
         }
-
         private void Update()
         {
+#if  UNITY_STANDALONE || UNITY_EDITOR
             if (IsPointerOverUI()) return;
-#if  UNITY_WINDOWS
             if(groundChecker.IsGrounded && Input.GetMouseButtonDown(0))
             {
                 playerSwordAttack.Attack();
@@ -62,17 +68,16 @@ namespace Player
             Destroy(gameObject);
             gameManager.GameOver();
         }
-
         public void AttackButton()
         {
 #if UNITY_ANDROID
+            Debug.Log("Attack button pressed.");
             if(groundChecker.IsGrounded )
             {
                 playerSwordAttack.Attack();
             }
 #endif
         }
-
         public void DashButton()
         {
 #if UNITY_ANDROID
